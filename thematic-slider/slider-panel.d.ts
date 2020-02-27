@@ -42,6 +42,7 @@ export declare class SliderPanel {
      * @param {String} controls the controls to add
      */
     private addControls;
+    addControls2(mapApi: any, slider: SliderPanel, controls: string, panel: any): void;
     /**
      * Compile template to link controller and html
      * @function compileTemplate
