@@ -42,7 +42,7 @@ export declare class SliderPanel {
      * @param {String} controls the controls to add
      */
     private addControls;
-    addControls2(mapApi: any, slider: SliderPanel, controls: string, panel: any): void;
+    addControls2(controls: string): void;
     /**
      * Compile template to link controller and html
      * @function compileTemplate
