@@ -16,13 +16,6 @@ export declare class SliderPanel {
      */
     constructor(mapApi: any, config: any);
     /**
- * Compile template to link controller and html
- * @function compileTemplate
- * @param {String} template measure control
- * @return {JQuery<HTMLElement>} temp compile template
- */
-    private compileTemplate;
-    /**
      * Open the panel
      * @function open
      */
