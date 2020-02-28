@@ -47,6 +47,30 @@ export declare class SliderPanel {
      * @function setPanelInfo
      */
     private setPanelInfo;
+    /**
+     * Step the panel information and layer visibility up or down
+     * @function step
+     * @param {String} direction the direction to step
+     * @return {Boolean} true if last or first element of the array, false otherwise
+     */
+    step(direction?: string): boolean;
+    /**
+     * Set layers visibility
+     * @function setLayerVisibility
+     */
+    private setLayerVisibility;
+    /**
+     * Set play or pause state. Play will call step function with up calues at the interval from the configuration
+     * @function play
+     * @param {Boolean} isPlaying state to put the slider to
+     */
+    play(isPlaying: boolean): void;
+    /**
+     * Set play (call step) with the proper interval
+     * @function setPlayInterval
+     * @param {SliderPanel} that sthe slider class to access within the interval function
+     */
+    private setPlayInterval;
 }
 export interface SliderDescription {
     desc: string;
