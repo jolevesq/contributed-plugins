@@ -1,3 +1,4 @@
+/// <reference types="jquery" />
 import { Observable, BehaviorSubject } from 'rxjs';
 export declare class SliderPanel {
     private _mapApi;
@@ -26,6 +27,13 @@ export declare class SliderPanel {
      * @param {Any} config the slider configuration
      */
     constructor(mapApi: any, config: any);
+    /**
+     * Compile template to link controller and html
+     * @function compileTemplate
+     * @param {String} template measure control
+     * @return {JQuery<HTMLElement>} temp compile template
+     */
+    compileTemplate(template: any): JQuery<HTMLElement>;
     /**
      * Open the panel
      * @function open
