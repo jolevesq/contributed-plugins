@@ -10,7 +10,7 @@ export declare class SliderControls {
      * @param {SliderPanel} slider the slider panel class access play and step functions
      * @param {String} controls the controls to enable
      */
-    constructor(mapApi: any);
+    constructor(mapApi: any, panel: any, slider: any);
     /**
      * Compile template to link controller and html
      * @function compileTemplate
