@@ -1,7 +1,9 @@
+/// <reference types="jquery" />
 import { SliderPanel } from './slider-panel';
 export declare class SliderControls {
     private _mapApi;
     private _panelControls;
+    readonly activeControls: JQuery<HTMLElement>[];
     /**
      * Controllers constructor
      * @constructor
@@ -9,7 +11,7 @@ export declare class SliderControls {
      * @param {SliderPanel} slider the slider panel class access play and step functions
      * @param {String} controls the controls to enable
      */
-    constructor(mapApi: any, slider: SliderPanel, controls: string, panel: any);
+    constructor(mapApi: any, slider: SliderPanel, controls: string);
     /**
      * Compile template to link controller and html
      * @function compileTemplate
