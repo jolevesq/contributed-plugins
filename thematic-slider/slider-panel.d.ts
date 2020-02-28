@@ -42,14 +42,6 @@ export declare class SliderPanel {
      * @param {String} controls the controls to add
      */
     private addControls;
-    addControls2(controls: string): void;
-    /**
-     * Compile template to link controller and html
-     * @function compileTemplate
-     * @param {String} template measure control
-     * @return {JQuery<HTMLElement>} temp compile template
-     */
-    private compileTemplate;
     /**
      * Set the panel info with the active layer
      * @function setPanelInfo
