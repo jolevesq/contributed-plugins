@@ -3,7 +3,7 @@ import { SliderPanel } from './slider-panel';
 export declare class SliderControls {
     private _mapApi;
     private _panelControls;
-    readonly controls: string[];
+    readonly controls: any[];
     /**
      * Controllers constructor
      * @constructor
