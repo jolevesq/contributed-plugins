@@ -1,14 +1,14 @@
 import 'nouislider/distribute/nouislider.css';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { Range } from './index';
 export declare class SliderBar {
     private _slider;
     private _mapApi;
     private _config;
     private _playInterval;
-    private _playState;
-    getPlayState(): Observable<boolean>;
-    private setPlayState;
+    static _playState: BehaviorSubject<boolean>;
+    static getPlayState(): Observable<boolean>;
+    private static setPlayState;
     private _gifImages;
     /**
      * Slider bar constructor
@@ -21,11 +21,11 @@ export declare class SliderBar {
      * Set ranges
      * @function setRanges
      * @param {Number} width display width
-     * @param {limits} limit min and max limit to set
+     * @param {Range} limit min and max limit to set
      * @param {Number} delta display width
-     * @return {limits} range the updated limits
+     * @return {Range} range the updated limits
      */
-    setRanges(width: number, limit: limits, delta: number): limits;
+    setRanges(width: number, limit: Range, delta: number): Range;
     /**
      * Set pips (slider labels) format
      * @function formatPips
@@ -113,8 +113,3 @@ export declare class SliderBar {
      */
     getDate(range: Range, type?: string): string[];
 }
-interface limits {
-    min: number;
-    max: number;
-}
-export {};
