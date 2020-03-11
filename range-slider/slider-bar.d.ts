@@ -1,4 +1,4 @@
-import 'nouislider/distribute/nouislider.css';
+import 'nouislider/distribute/nouislider.min.css';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { Range } from './index';
 export declare class SliderBar {

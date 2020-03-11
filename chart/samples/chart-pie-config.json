@@ -21,7 +21,7 @@
         "reorderable": false
       }
     },
-    "version": "2.0",
+    "version": "3.2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -85,22 +85,16 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": [
-          ]
+          "children": []
         }
       },
       "layers": [
         {
           "id": "0",
-          "name": "Power Plant 100MW or more (hydro)",
+          "name": "Graphics",
           "layerType": "esriFeature",
-          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/20"
-        },
-        {
-          "id": "1",
-          "name": "Power Plant 100MW or more (petroleum)",
-          "layerType": "esriFeature",
-          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/24"
+          "fileType": "geojson",
+          "url": "https://raw.githubusercontent.com/jolevesq/plugins/chart/chartLayer/samples/config/geoJSON/pieChart.json"
         }
       ],
       "extentSets": [
@@ -255,8 +249,34 @@
       ]
     },
     "plugins": {
-      "myFirstPlugin": {
-        "description": "This is my first plugin description"
+      "chart": {
+        "type": "pie",
+        "title": "My Custom Tilte",
+        "labelsPie": {
+          "type": "config",
+          "values": "lbl 1;lbl 2;lbl 3;lbl 4;lbl 5;lbl 6; lbl 7",
+          "split": ";"
+        },
+        "options": {
+          "colors": "#aaffc3;#808000;#ffd8b1;#000075;#e6194b;#3cb44b;#ffe119",
+          "cutOut": 0
+        },
+        "layers": [{
+            "id": "0",
+            "data": [{
+              "type": "single",
+              "measure": "data",
+              "label": {
+                "type": "config",
+                "values": "",
+                "split": ";"
+              },
+              "regex": "",
+              "split": ";",
+              "prefix": "Custom",
+              "suffix": "Color"
+            }]
+        }]
       }
     }
   }
