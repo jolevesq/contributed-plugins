@@ -246,7 +246,8 @@
   },
   "plugins": {
     "draw": {
-      "tools": ["picker", "point", "polyline", "polygon", "measure", "extent", "write", "read"]
+      "open": true,
+      "tools": ["picker", "point", "polyline", "polygon", "edit", "measure", "extent", "write", "read"]
     }
   }
 }

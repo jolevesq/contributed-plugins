@@ -1,7 +1,6 @@
 export default class Chart {
     private _mapApi;
     private _panel;
-    private _panelOptions;
     /**
     * Plugin init
     * @function init
@@ -12,4 +11,5 @@ export default class Chart {
 export default interface Chart {
     _RV: any;
     config: any;
+    panelOptions: any;
 }
