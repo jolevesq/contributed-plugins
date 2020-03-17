@@ -2,62 +2,64 @@
  * Creates and manages charts.
  */
 export declare class ChartLoader {
-    private chart;
+    private _chart;
+    private _mapApi;
+    private _panel;
     static defaultColors: string[];
-    constructor(mapApi: any, config: any, attrs: any);
-    draw(opts: any): void;
-    getGlobalOptions(title: string): {
-        maintainAspectRatio: boolean;
-        responsive: boolean;
-        responsiveAnimationDuration: number;
-        animation: {
-            duration: number;
-            animateRotate: boolean;
-            animateScale: boolean;
-        };
-        title: {
-            display: boolean;
-            text: string;
-        };
-        showLines: boolean;
-        elements: {
-            point: {
-                radius: number;
-                hoverRadius: number;
-                hitRadius: number;
-            };
-            line: {
-                spanGaps: boolean;
-                tension: number;
-                fill: boolean;
-                borderWidth: number;
-            };
-        };
-        hover: {
-            mode: string;
-            intersect: boolean;
-            axis: string;
-        };
-        tooltips: {
-            position: string;
-            intersect: boolean;
-            mode: string;
-            axis: string;
-            callbacks: {
-                title: (tooltipItem: any) => string;
-                label: (tooltipItem: any, data: any) => string;
-            };
-        };
-        tooltipEvents: string[];
-    };
+    /**
+     * Chart loader constructor
+     * @constructor
+     * @param {Any} mapApi the viewer api
+     * @param {Any} config the slider configuration
+     * @param {Object} attrs the feature attributes
+     */
+    constructor(mapApi: any, config: any, attrs: object);
+    /**
+     * Draw the chart
+     * @function draw
+     * @param {ChartOptions} opts the chart options
+     */
+    draw(opts: chartOptions): void;
+    /**
+     * Get global options fot all charts
+     * @function getGlobalOptions
+     * @param {String} title the chart title
+     * @return {Object} the global options
+     */
+    getGlobalOptions(title: string): object;
+    /**
+     * Destroy the chart
+     * @function destroy
+     */
     destroy(): void;
-    static parse(config: any, attrs: any, colors?: any[]): {
+    /**
+     * Parse feature datasets
+     * @function parse
+     * @param {Any} config the configuration
+     * @param {Any} attrs the feature attributes
+     * @param {String[]} colors the array of colors to use
+     * @return {Object} the parse datasets
+     */
+    static parse(config: any, attrs: any, colors?: string[]): {
         datasets: any[];
     };
+    /**
+     * Get chart labels
+     * @function getLabels
+     * @param {Any} config the configuration
+     * @param {Any} attrs the feature attributes
+     * @param {Number} index the index to start initialize to 0 if not provided
+     * @return {String[]} the array of labels
+     */
     static getLabels(config: any, attrs: any, index?: number): string[];
 }
+interface chartOptions {
+    title: string;
+    type: string;
+    data: object;
+    options: object;
+}
 export interface ChartLoader {
-    mapApi: any;
-    panel: any;
     defaultColors: string[];
 }
+export {};
