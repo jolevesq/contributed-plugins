@@ -1,1 +1,1 @@
-export declare const CHART_TEMPLATE = "\n<canvas id=\"rvChart\" class=\"rv-chart\"></canvas>";
+export declare const CHART_TEMPLATE = "\n<div class=\"rv-chart-panel\">\n    <canvas id=\"rvChart\" class=\"rv-chart\"></canvas>\n    <div id=\"nouislider\" class=\"rv-chart-slider\"></div>\n</div>";
