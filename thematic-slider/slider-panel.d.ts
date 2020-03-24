@@ -37,7 +37,7 @@ export declare class SliderPanel {
      */
     close(): void;
     /**
-     * Add controls (slider bar and description
+     * Add controls (slider bar and description)
      * @function addControls
      * @param {String} controls the controls to add
      */
@@ -60,7 +60,7 @@ export declare class SliderPanel {
      */
     private setLayerVisibility;
     /**
-     * Set play or pause state. Play will call step function with up calues at the interval from the configuration
+     * Set play or pause state. Play will call step function with up value at the interval from the configuration
      * @function play
      * @param {Boolean} isPlaying state to put the slider to
      */
@@ -68,7 +68,7 @@ export declare class SliderPanel {
     /**
      * Set play (call step) with the proper interval
      * @function setPlayInterval
-     * @param {SliderPanel} that sthe slider class to access within the interval function
+     * @param {SliderPanel} that the slider class to access within the interval function
      */
     private setPlayInterval;
 }
