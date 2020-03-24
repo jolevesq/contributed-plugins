@@ -2,6 +2,20 @@
  * Creates bar and line charts.
  */
 export declare class ChartBar {
+    private _data;
+    private _range;
+    /**
+     * get datasets
+     * @property datasets
+     * @return {Object} original datasets (not filtered one)
+     */
+    readonly datasets: object[];
+    /**
+     * get range
+     * @property range
+     * @return {Object} the min and max values for the datasets
+     */
+    readonly range: any;
     /**
      * Chart bar constructor
      * @constructor
@@ -15,8 +29,9 @@ export declare class ChartBar {
      * @param {Object} layerData the layer data provided by configuration
      * @param {Object} attrs the feature attributes
      * @param {String[]} colors the array of colors to use
+     * @param {String} xType the x axis type, date or linear
      */
-    setData(layerData: object, attrs: object, colors: string[]): void;
+    setData(layerData: object, attrs: object, colors: string[], xType: string): void;
     /**
      * Set the chart axis
      * @function setAxis
@@ -34,4 +49,5 @@ export interface ChartBar {
     type: string;
     data: any;
     title: string;
+    ranges: any;
 }

@@ -3,23 +3,64 @@
  */
 export declare class ChartLoader {
     private _chart;
+    private _config;
     private _mapApi;
     private _panel;
+    private _slider;
+    private _barChartOptions;
+    private _pieChartOptions;
     static defaultColors: string[];
     /**
      * Chart loader constructor
      * @constructor
      * @param {Any} mapApi the viewer api
      * @param {Any} config the slider configuration
-     * @param {Object} attrs the feature attributes
      */
-    constructor(mapApi: any, config: any, attrs: object);
+    constructor(mapApi: any, config: any);
+    /**
+     * Initialize the slider
+     * @function initSlider
+     * @param {Number} min minimum value for slider
+     * @param {Number} max maximum value for slider
+     * @param {String} xType the x axis type, date or linear
+     */
+    initSlider(min: number, max: number, xType: string): void;
+    /**
+     * Parse the graph value with the range from the slider
+     * @function parseRange
+     * @param {Date} min minimum value to filter
+     * @param {Date} max maximum value to filter
+     * @param {Any} data data to filter
+     */
+    parseRange(min: Date, max: Date, data: any): object[];
+    /**
+     * Destroy the slider
+     * @function destroySlider
+     */
+    destroySlider(): void;
+    /**
+     * Destroy the chart
+     * @function destroyChart
+     */
+    destroyChart(): void;
+    /**
+     * Create pie chart
+     * @function createPieChart
+     * @param {Object} attrs attributes to use for the graph
+     */
+    createPieChart(attrs: object): void;
+    /**
+     * Create bar chart
+     * @function createBarChart
+     * @param {Object} attrs attributes to use for the graph
+     */
+    createBarChart(attrs: object): void;
     /**
      * Draw the chart
      * @function draw
-     * @param {ChartOptions} opts the chart options
+     * @param {Any} opts the chart options
      */
-    draw(opts: chartOptions): void;
+    draw(opts: any): void;
     /**
      * Get global options fot all charts
      * @function getGlobalOptions
@@ -28,19 +69,15 @@ export declare class ChartLoader {
      */
     getGlobalOptions(title: string): object;
     /**
-     * Destroy the chart
-     * @function destroy
-     */
-    destroy(): void;
-    /**
      * Parse feature datasets
      * @function parse
      * @param {Any} config the configuration
      * @param {Any} attrs the feature attributes
      * @param {String[]} colors the array of colors to use
+     * @param {String} xType the x axis type, date or linear
      * @return {Object} the parse datasets
      */
-    static parse(config: any, attrs: any, colors?: string[]): {
+    static parse(config: any, attrs: any, colors?: string[], xType?: string): {
         datasets: any[];
     };
     /**
@@ -53,13 +90,6 @@ export declare class ChartLoader {
      */
     static getLabels(config: any, attrs: any, index?: number): string[];
 }
-interface chartOptions {
-    title: string;
-    type: string;
-    data: object;
-    options: object;
-}
 export interface ChartLoader {
     defaultColors: string[];
 }
-export {};
