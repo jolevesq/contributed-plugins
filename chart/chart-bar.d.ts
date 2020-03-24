@@ -2,20 +2,6 @@
  * Creates bar and line charts.
  */
 export declare class ChartBar {
-    private _data;
-    private _range;
-    /**
-     * get datasets
-     * @property datasets
-     * @return {Object} original datasets (not filtered one)
-     */
-    readonly datasets: object[];
-    /**
-     * get range
-     * @property range
-     * @return {Object} the min and max values for the datasets
-     */
-    readonly range: any;
     /**
      * Chart bar constructor
      * @constructor
@@ -48,5 +34,4 @@ export interface ChartBar {
     type: string;
     data: any;
     title: string;
-    ranges: any;
 }

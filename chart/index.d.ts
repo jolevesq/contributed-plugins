@@ -1,7 +1,6 @@
 export default class Chart {
     private _mapApi;
     private _panel;
-    private _loader;
     private _panelOptions;
     /**
     * Plugin init
