@@ -7,6 +7,7 @@ export declare class ChartLoader {
     private _mapApi;
     private _panel;
     private _slider;
+    private _xType;
     private _barChartOptions;
     private _pieChartOptions;
     static defaultColors: string[];
