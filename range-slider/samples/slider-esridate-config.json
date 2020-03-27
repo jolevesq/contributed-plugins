@@ -283,7 +283,6 @@
     },
     "plugins": {
       "rangeSlider": {
-        "open": true,
         "controls": ["lock", "delay", "export", "refresh"],
         "params": {
           "delay": 3000,
