@@ -272,7 +272,7 @@
         "autorun": true,
         "loop": true,
         "description": true,
-        "slider": true,
+        "slider": false,
         "stack": true,
         "layers": [
           { "id": "0",
