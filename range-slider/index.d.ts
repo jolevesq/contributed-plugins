@@ -1,5 +1,6 @@
 export default class RangeSlider {
     private _button;
+    private _intervalAtt;
     /**
     * Plugin init
     * @function init
@@ -18,7 +19,7 @@ export default class RangeSlider {
      * @param {Any} mapApi the viewer api
      * @param {Any} config the slider configuration
      */
-    setLayer(layer: any, config: any, ids: string[]): void;
+    setLayer(layer: any, config: any): void;
     /**
      * Set slider bar
      * @function setSliderBar
