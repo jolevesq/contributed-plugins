@@ -336,5 +336,7 @@ input:focus + .noUi-tooltip {
 .rv-chart-slider {
   margin: 15px; }
 
-.rv-chart-details {
+.rv-chart-details-value {
   padding: 8px 16px; }
+  .rv-chart-details-value body {
+    background-color: #FFF; }
