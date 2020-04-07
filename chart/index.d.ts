@@ -14,4 +14,5 @@ export default class Chart {
 export default interface Chart {
     _RV: any;
     config: any;
+    translations: any;
 }
