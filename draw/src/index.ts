@@ -35,7 +35,7 @@ export default class Draw {
      */
     onMenuItemClick() {
         return () => {
-            // geet if button is active or not and set all tools as inactive by default
+            // get if button is active or not and set all tools as inactive by default
             this.button.isActive = !this.button.isActive;
             this.panelManager.setInactive();
             (<any>document).getElementsByClassName('rv-mapnav-draw-content')[0].style.display = this.button.isActive ? 'block' : 'none';

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta content="width=device-width,initial-scale=1" name="viewport" />
-        <title>Plugin: Thematic Slider</title>
+        <title>Plugin: Hover</title>
 
         <style>
             body {
@@ -17,28 +17,25 @@
         </style>
 
         <link rel="stylesheet" href="../../fgpv/rv-styles.css" />
-        <link rel="stylesheet" href="../thematic-slider.css" />
-        <script src="../thematic-slider.js"></script>
+        <link rel="stylesheet" href="../hover.css" />
+        <script src="../hover.js"></script>
     </head>
 
     <body>
         <section id="header">
             <div class="row">
                 <select id="selectConfig" class="tool">
-                    <option value="thematic-slider-close-config.json">01. Close by default, no loop</option>
-                    <option value="thematic-slider-loop-config.json">02. Autorun with controls</option>
-                    <option value="thematic-slider-stack-config.json">03. Layer visibility stack</option>
-                    <option value="thematic-slider-naked-config.json">04. Autorun no controls</option>
+                    <option value="hover-config.json">01. Close by default, no loop</option>
                 </select>
             </div>
         </section>
         <div
             class="myMap"
-            id="mapThematicSlider"
+            id="mapHover"
             is="rv-map"
-            rv-config="thematic-slider-open-config.json"
+            rv-config="hover-config.json"
             rv-langs='["en-CA", "fr-CA"]'
-            rv-plugins="thematicSlider"
+            rv-plugins="hover"
         >
             <noscript>
                 <p>
@@ -65,7 +62,7 @@
                 var params = new URLSearchParams(currentUrl.search);
                 var sampleIndex =  params.get(SAMPLE_KEY) - 1;
                 var selectElem = document.getElementById('selectConfig');
-                var sameplMapElem = document.getElementById('mapThematicSlider');
+                var sameplMapElem = document.getElementById('mapHover');
                 if (params.has(SAMPLE_KEY) && sampleIndex >= 0 && selectElem.item(sampleIndex)) {
                     var previousSample = sessionStorage.getItem('sample');
                     if (previousSample !== undefined) { // first time loading
