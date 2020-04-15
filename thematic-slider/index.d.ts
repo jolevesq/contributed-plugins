@@ -13,6 +13,12 @@ export default class ThematicSlider {
     * @return {function} the function to run
     */
     onMenuItemClick(): () => void;
+    /**
+    * Disable main app bar buttons except sidenav when thematic slider is open to avoid collision
+    * @function setButtonState
+    * @param {Boolean} disable disable or not the buttons
+    */
+    setButtonState(disable: boolean): void;
 }
 export default interface ThematicSlider {
     mapApi: any;

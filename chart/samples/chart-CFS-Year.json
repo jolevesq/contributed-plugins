@@ -457,11 +457,7 @@
                             "prefix": "",
                             "suffix": "xx / xx"
                         }
-                    ],
-                    "details": {
-                      "enabled": false,
-                      "value": ""
-                    }
+                    ]
                 }
             ]
         }

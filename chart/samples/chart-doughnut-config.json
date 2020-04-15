@@ -275,11 +275,7 @@
               "split": ";",
               "prefix": "Custom",
               "suffix": "Color"
-            }],
-            "details": {
-              "enabled": false,
-              "value": ""
-            }
+            }]
         }]
       }
     }

@@ -6,13 +6,8 @@ export declare class ChartLoader {
     private _config;
     private _mapApi;
     private _panel;
-    private _sliderX;
-    private _sliderY;
+    private _slider;
     private _xType;
-    private _yType;
-    private _xRange;
-    private _yRange;
-    private _lineChartOptions;
     private _barChartOptions;
     private _pieChartOptions;
     static defaultColors: string[];
@@ -26,29 +21,19 @@ export declare class ChartLoader {
     /**
      * Initialize the slider
      * @function initSlider
-     * @param {Any} slider slider div
      * @param {Number} min minimum value for slider
      * @param {Number} max maximum value for slider
      * @param {String} xType the x axis type, date or linear
      */
-    initSlider(slider: any, min: number, max: number, type: string): void;
-    /**
-     * Parse the graph pips labels value
-     * @function parsePips
-     * @param {String} axis axis to parse labels for (x or y)
-     * @param {Date} type the type of axis (linear or date)
-     * @param {Any} min min range to parse the value
-     * @param {Any} max max range to parse the value
-     */
-    parsePips(axis: string, type: string, min: any, max: any): void;
+    initSlider(min: number, max: number, xType: string): void;
     /**
      * Parse the graph value with the range from the slider
      * @function parseRange
-     * @param {Any} xRange x range values to filter
-     * @param {Any} yRange y range values to filter
+     * @param {Date} min minimum value to filter
+     * @param {Date} max maximum value to filter
      * @param {Any} data data to filter
      */
-    parseRange(xRange: any, yRange: any, data: any): object[];
+    parseRange(min: Date, max: Date, data: any): object[];
     /**
      * Destroy the slider
      * @function destroySlider
@@ -72,12 +57,6 @@ export declare class ChartLoader {
      */
     createBarChart(attrs: object): void;
     /**
-     * Create line chart
-     * @function createLineChart
-     * @param {Object} attrs attributes to use for the graph
-     */
-    createLineChart(attrs: object): void;
-    /**
      * Draw the chart
      * @function draw
      * @param {Any} opts the chart options
@@ -86,9 +65,10 @@ export declare class ChartLoader {
     /**
      * Get global options fot all charts
      * @function getGlobalOptions
+     * @param {String} title the chart title
      * @return {Object} the global options
      */
-    getGlobalOptions(): object;
+    getGlobalOptions(title: string): object;
     /**
      * Parse feature datasets
      * @function parse

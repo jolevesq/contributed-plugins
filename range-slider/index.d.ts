@@ -1,6 +1,5 @@
 export default class RangeSlider {
     private _button;
-    private _intervalAtt;
     /**
     * Plugin init
     * @function init

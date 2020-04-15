@@ -295,11 +295,7 @@
               "split": ",",
               "prefix": "",
               "suffix": "mBq / m3"
-            }],
-            "details": {
-              "enabled": false,
-              "value": ""
-            }
+            }]
         }]
       }
     }
