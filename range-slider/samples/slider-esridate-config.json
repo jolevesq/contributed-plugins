@@ -121,13 +121,8 @@
         {
           "id": "GeoChron",
           "name": "GeoChron",
-          "layerType": "esriDynamic",
-          "layerEntries": [{
-            "index": 0,
-            "nameField": "OBJECTID",
-            "name": "Geo"
-          }],
-          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/GSCC/Geochronology/MapServer/"
+          "layerType": "esriFeature",
+          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/GSCC/Geochronology/MapServer/0"
         }
       ],
       "extentSets": [
