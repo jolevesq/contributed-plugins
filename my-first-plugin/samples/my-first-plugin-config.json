@@ -21,7 +21,7 @@
         "reorderable": false
       }
     },
-    "version": "3.2.0",
+    "version": "2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -85,15 +85,22 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": []
+          "children": [
+          ]
         }
       },
       "layers": [
         {
           "id": "0",
-          "name": "Graphics",
+          "name": "Power Plant 100MW or more (hydro)",
           "layerType": "esriFeature",
-          "url": "https://webservices.maps.canada.ca/arcgis/rest/services/Test_FGP/test_data/MapServer/0"
+          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/20"
+        },
+        {
+          "id": "1",
+          "name": "Power Plant 100MW or more (petroleum)",
+          "layerType": "esriFeature",
+          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/24"
         }
       ],
       "extentSets": [
@@ -248,59 +255,8 @@
       ]
     },
     "plugins": {
-      "chart": {
-        "type": "line",
-        "title": "my chart",
-        "axis": {
-          "xAxis": {
-            "type": "date",
-            "title": "Dates",
-            "values": "",
-            "split": ""
-          },
-          "yAxis": {
-            "type": "linear",
-            "title": "My values",
-            "values": "",
-            "split": ""
-          }
-        },
-        "options": {
-          "colors": "",
-          "cutOut": 0
-        },
-        "layers": [{
-            "id": "0",
-            "data": [{
-              "type": "combine",
-              "measure": "Measure 2 (Data)",
-              "label": {
-                "type": "field",
-                "values": "Measure 2 (Name)",
-                "split": ""
-              },
-              "regex": "\\(|\\),\\(|\\)",
-              "split": ",",
-              "prefix": "",
-              "suffix": "mBq / m3"
-            }, {
-              "type": "combine",
-              "measure": "Measure 3 (Data)",
-              "label": {
-                "type": "field",
-                "values": "Measure 3 (Name)",
-                "split": ""
-              },
-              "regex": "\\(|\\),\\(|\\)",
-              "split": ",",
-              "prefix": "",
-              "suffix": "mBq / m3"
-            }],
-            "details": {
-              "enabled": false,
-              "value": ""
-            }
-        }]
+      "myFirstPlugin": {
+        "description": "This is my first plugin description"
       }
     }
   }
