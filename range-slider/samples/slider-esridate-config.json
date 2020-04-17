@@ -281,7 +281,7 @@
         "open": true,
         "controls": ["lock", "delay", "export", "refresh"],
         "params": {
-          "delay": 3000,
+          "delay": 6000,
           "range": { "min": 1109108871000, "max": 1111505342000 },
           "type": "date"
         },
