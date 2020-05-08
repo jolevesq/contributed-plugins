@@ -112,17 +112,23 @@ export declare class SliderBar {
      */
     playInstant(limitmax: number): void;
     /**
+     * Check if we need to take snapshot to export GIF
+     * @function setTakeSnapShot
+     */
+    setTakeSnapShot(): void;
+    /**
      * Take a snapshot of the map for the export gif function
      * @function takeSnapShot
      * @param {Boolean} stop true if it is the last snapshot and it needs to export the gif, false otherwise
      */
     takeSnapShot(stop: boolean): void;
+    exportToGIF(): void;
     /**
-    * Set play on the slider
-    * @function dataURItoBlob
-    * @param {String} dataURI true if slider is playing, false otherwise
-    * @return {Blob} blob the blob object (gif image) to save to file
-    */
+     * Set play on the slider
+     * @function dataURItoBlob
+     * @param {String} dataURI true if slider is playing, false otherwise
+     * @return {Blob} blob the blob object (gif image) to save to file
+     */
     dataURItoBlob(dataURI: string): Blob;
     /**
      * Set pause on the slider when play is call with false
