@@ -5,7 +5,7 @@ export declare class ChartBar {
     /**
      * Chart bar constructor
      * @constructor
-     * @param {Any} config the slider configuration
+     * @param {Any} config the chart configuration
      * @param {Object} attrs the feature attributes
      */
     constructor(config: any, attrs: object);
