@@ -33,7 +33,32 @@ export declare class DrawToolbar {
     private _lengthParams;
     private _distanceParams;
     private _showMeasure;
+    private _localMouse;
+    private _localWCAG;
     private _local;
+    /**
+     * get local WCAG tooltip
+     * @property localWCAG
+     * @returns {Object} the WCAG tooltip to use
+     */
+    readonly localWCAG: object;
+    /**
+     * get local mouse tooltip
+     * @property localMouse
+     * @returns {Object} the mouse tooltip to use
+     */
+    readonly localMouse: object;
+    /**
+     * set local tooltip for draw toolbar
+     * @property local
+     * @param {Object} value the tooltip to use
+     */
+    /**
+    * get local WCAG tooltip
+    * @property local
+    * @returns {Object} the WCAG tooltip to use
+    */
+    local: object;
     /**
      * Toolbar constructor
      * @constructor
