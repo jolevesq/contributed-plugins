@@ -5,11 +5,11 @@ export declare class SliderControls {
      * Slider controls constructor
      * @constructor
      * @param {Any} mapApi the viewer api
-     * @param {Any} panel the panel
+     * @param {Any} panelManager the Panel Manager class
      * @param {String[]} templates the controls template
      * @param {SliderBar} slider the slider bar
      */
-    constructor(mapApi: any, panel: any, templates: string[], slider: SliderBar);
+    constructor(mapApi: any, panelManager: any, templates: string[], slider: SliderBar);
     /**
      * Compile template to link controller and html
      * @function compileTemplate

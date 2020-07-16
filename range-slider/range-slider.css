@@ -348,8 +348,7 @@ input:focus + .noUi-tooltip {
 
 .rv-rangeslider {
   display: flex;
-  flex-direction: row;
-  padding: 10px; }
+  flex-direction: row; }
   .rv-rangeslider .slider-content {
     overflow: hidden;
     width: 100%;
@@ -374,8 +373,6 @@ input:focus + .noUi-tooltip {
             display: inline-block;
             margin: 10px 0;
             width: 80px; }
-          .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-bar-control.slider-desc-control md-icon {
-            height: 16px; }
           .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-bar-control.slider-loop-control .slider-loop-control-active {
             color: black;
             opacity: 1; }
@@ -388,14 +385,3 @@ input:focus + .noUi-tooltip {
             flex-direction: row-reverse; }
             .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-bar-control.slider-switch div:last-of-type {
               margin-right: 5px; }
-      .rv-rangeslider .slider-content .slider-bar .slider-widget {
-        width: 97%; }
-      .rv-rangeslider .slider-content .slider-bar .slider-units {
-        width: 3%;
-        right: 10px;
-        position: absolute;
-        color: #999; }
-  .rv-rangeslider .slider-desc {
-    color: #999; }
-    .rv-rangeslider .slider-desc span {
-      display: block; }

@@ -121,8 +121,13 @@
         {
           "id": "GeoChron",
           "name": "GeoChron",
-          "layerType": "esriFeature",
-          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/GSCC/Geochronology/MapServer/0"
+          "layerType": "esriDynamic",
+          "layerEntries": [{
+            "index": 0,
+            "nameField": "OBJECTID",
+            "name": "Geo"
+          }],
+          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/GSCC/Geochronology/MapServer/"
         }
       ],
       "extentSets": [
@@ -281,10 +286,9 @@
         "open": true,
         "controls": ["lock", "delay", "export", "refresh"],
         "params": {
-          "delay": 6000,
+          "delay": 3000,
           "range": { "min": 1109108871000, "max": 1111505342000 },
-          "type": "date",
-          "units": ""
+          "type": "date"
         },
         "layers": [{
             "id": "GeoChron",

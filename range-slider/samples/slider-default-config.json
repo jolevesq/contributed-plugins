@@ -276,9 +276,7 @@
         "controls": ["lock", "delay", "refresh"],
         "params": {
           "delay": 3000,
-          "type": "number",
-          "units": "Total MW",
-          "description": "This slider let's you see by hydro electric total power."
+          "type": "number"
         },
         "layers": [{
           "id": "0",

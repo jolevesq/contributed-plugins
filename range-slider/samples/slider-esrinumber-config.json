@@ -100,12 +100,18 @@
           "id": "powerplant100mw-naturalGas",
           "name": "Natural Gas Pipeline",
           "layerType": "esriFeature",
+          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/2"
+        },
+        {
+          "id": "GeoChron",
+          "name": "GeoChron",
+          "layerType": "esriDynamic",
           "layerEntries": [{
-            "index": 2,
+            "index": 0,
             "nameField": "OBJECTID",
             "name": "Geo"
           }],
-          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/2"
+          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/GSCC/Geochronology/MapServer/"
         }
       ],
       "extentSets": [
@@ -265,13 +271,12 @@
         "controls": ["lock", "loop", "delay", "refresh", "export"],
         "params": {
           "delay": 3000,
-          "range": { "min": -120, "max": -115 },
-          "limit": { "min": -120, "max": -90 },
-          "type": "number",
-          "units": "Longitude"
+          "range": { "min": -135, "max": -125 },
+          "limit": { "min": -135, "max": -90 },
+          "type": "number"
         },
         "layers": [{
-            "id": "0",
+            "id": "GeoChron",
             "field": "LONGITUDE"
         }]
       }
