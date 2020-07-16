@@ -5,6 +5,10 @@ export declare class SliderBar {
     private _mapApi;
     private _config;
     private _playInterval;
+    private _range;
+    private _limit;
+    private _step;
+    private _precision;
     static _playState: BehaviorSubject<boolean>;
     static getPlayState(): Observable<boolean>;
     private static setPlayState;
@@ -16,6 +20,13 @@ export declare class SliderBar {
      * @param {Any} config the slider configuration
      */
     constructor(mapApi: any, config: any);
+    /**
+     * Start slider creation
+     * @function
+     * @param {String} type the type of slider (date, number or wmst)
+     * @param {String} language the viewerlanguage (en-CA or fr-CA)
+     */
+    startSlider(type: string, language: string): void;
     /**
      * Set ranges
      * @function setRanges
@@ -34,9 +45,59 @@ export declare class SliderBar {
      * @return {any} value the formated value
      */
     formatPips(value: any, field: string, lang: string): any;
+    /**
+     * Set slider range
+     * @property range
+     */
+    /**
+    * Get slider range
+    * @property range
+    */
+    range: Range;
+    /**
+     * Set slider limit
+     * @property limit
+     */
+    /**
+    * Get slider limit
+    * @property limit
+    */
+    limit: Range;
+    /**
+     * Set slider lock
+     * @property lock
+     */
+    /**
+    * Get slider lock
+    * @property lock
+    */
     lock: boolean;
+    /**
+     * Set slider loop
+     * @property loop
+     */
+    /**
+    * Get slider loop
+    * @property loop
+    */
     loop: boolean;
+    /**
+     * Set slider delay
+     * @property delay
+     */
+    /**
+    * Get slider delay
+    * @property delay
+    */
     delay: number;
+    /**
+     * Set slider export
+     * @property export
+     */
+    /**
+    * Get slider export
+    * @property export
+    */
     export: boolean;
     /**
      * Set play or pause on the slider
@@ -51,17 +112,23 @@ export declare class SliderBar {
      */
     playInstant(limitmax: number): void;
     /**
+     * Check if we need to take snapshot to export GIF
+     * @function setTakeSnapShot
+     */
+    setTakeSnapShot(): void;
+    /**
      * Take a snapshot of the map for the export gif function
      * @function takeSnapShot
      * @param {Boolean} stop true if it is the last snapshot and it needs to export the gif, false otherwise
      */
     takeSnapShot(stop: boolean): void;
+    exportToGIF(): void;
     /**
-    * Set play on the slider
-    * @function dataURItoBlob
-    * @param {String} dataURI true if slider is playing, false otherwise
-    * @return {Blob} blob the blob object (gif image) to save to file
-    */
+     * Set play on the slider
+     * @function dataURItoBlob
+     * @param {String} dataURI true if slider is playing, false otherwise
+     * @return {Blob} blob the blob object (gif image) to save to file
+     */
     dataURItoBlob(dataURI: string): Blob;
     /**
      * Set pause on the slider when play is call with false
