@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta content="width=device-width,initial-scale=1" name="viewport" />
-        <title>Plugin: Draw</title>
+        <title>Plugin: My First Plugin</title>
 
         <style>
             body {
@@ -17,18 +17,18 @@
         </style>
 
         <link rel="stylesheet" href="../../fgpv/rv-styles.css" />
-        <link rel="stylesheet" href="../draw.css" />
-        <script src="../draw.js"></script>
+        <link rel="stylesheet" href="../my-first-plugin.css" />
+        <script src="../my-first-plugin.js"></script>
     </head>
 
     <body>
         <div
             class="myMap"
-            id="mapDraw"
+            id="mapMyFirstPlugin"
             is="rv-map"
-            rv-config="draw-config.json"
+            rv-config="my-first-plugin-config.json"
             rv-langs='["en-CA", "fr-CA"]'
-            rv-plugins="draw"
+            rv-plugins="myFirstPlugin"
         >
             <noscript>
                 <p>
@@ -48,22 +48,4 @@
         <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Object.entries,Object.values,Array.prototype.find,Array.prototype.findIndex,Array.prototype.values,Array.prototype.includes,HTMLCanvasElement.prototype.toBlob,String.prototype.repeat,String.prototype.codePointAt,String.fromCodePoint,NodeList.prototype.@@iterator,Promise,Promise.prototype.finally"></script>
         <script src="../../fgpv/rv-main.js"></script>
     </body>
-
-    <script>
-        setTimeout(() => {
-            // test to add observable for added geometry
-            window.drawObs.drawPoint.subscribe(value => {
-                console.log(`Poind added: ${JSON.stringify(value)}`);
-            });
-            window.drawObs.drawPolyline.subscribe(value => {
-                console.log(`Polyline added: ${JSON.stringify(value)}`);
-            });
-            window.drawObs.drawPolygon.subscribe(value => {
-                console.log(`Polygon added: ${JSON.stringify(value)}`);
-            });
-            window.drawObs.drawExtent.subscribe(value => {
-                console.log(`Extent added: ${JSON.stringify(value)}`);
-            });
-        }, 5000)
-    </script>
 </html>
