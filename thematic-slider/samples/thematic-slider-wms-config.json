@@ -91,16 +91,30 @@
       },
       "layers": [
         {
-          "id": "0",
-          "name": "hydro",
-          "layerType": "esriFeature",
-          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/20"
-        },
-        {
-          "id": "1",
-          "name": "petroleum",
-          "layerType": "esriFeature",
-          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/24"
+            "id": "wms",
+            "layerType": "ogcWms",
+            "url": "http://webservices.maps.canada.ca/arcgis/services/NRCan/earthquakes_en/MapServer/WmsServer",
+            "name": "Real WMS",
+            "layerEntries": [
+              {
+                  "id": "3",
+                  "name": "Sample",
+                  "currentStyle": "default"
+              }]
+          },
+          {
+          "layerType": "ogcWms",
+          "suppressGetCapabilities": true,
+          "layerEntries": [
+              {
+                  "init": true,
+                  "id": "CABIN",
+                  "name": "CABIN"
+              }
+          ],
+          "name": "CABIN",
+          "id": "wms2",
+          "url": "https://cabin-rcba.ec.gc.ca/cabin_ows.asp"
         },
         {
           "id": "2",
@@ -269,33 +283,33 @@
     "plugins": {
       "thematicSlider": {
         "open": true,
-        "autorun": true,
+        "autorun": false,
         "loop": true,
         "description": true,
         "slider": true,
-        "stack": true,
+        "stack": false,
         "layers": [
-          { "id": "0",
-            "duration": 3000,
-            "title": "Hydro Electric",
-            "description": "My description 1"
-          }, {
-            "id": "1",
-            "duration": 3000,
-            "title": "petroleum",
-            "description": "My description 2"
-          }, {
-            "id": "2",
-            "duration": 3000,
-            "title": "Solar",
-            "description": "My description 3"
-          }, {
-            "id": "3",
-            "duration": 5000,
-            "title": "Wind",
-            "description": "My description 4"
-          }
-        ]
+            { "id": "wms",
+              "duration": 3000,
+              "title": "WMS",
+              "description": "My description 1"
+            }, {
+              "id": "wms2",
+              "duration": 3000,
+              "title": "WMS 2",
+              "description": "My description 2"
+            }, {
+              "id": "2",
+              "duration": 3000,
+              "title": "Solar",
+              "description": "My description 3"
+            }, {
+              "id": "3",
+              "duration": 5000,
+              "title": "Wind",
+              "description": "My description 4"
+            }
+          ]
       }
     }
   }

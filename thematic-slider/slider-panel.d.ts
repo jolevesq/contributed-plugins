@@ -15,6 +15,9 @@ export declare class SliderPanel {
     static _description: BehaviorSubject<object>;
     static getDescription(): Observable<object>;
     private static setDescription;
+    static _legendState: BehaviorSubject<boolean>;
+    static getLegendState(): Observable<boolean>;
+    private static setLegendState;
     static _end: BehaviorSubject<string>;
     static getLastStep(): Observable<string>;
     private static setLastStep;
@@ -47,6 +50,13 @@ export declare class SliderPanel {
      * @function setPanelInfo
      */
     private setPanelInfo;
+    /**
+     * Get the symbology stack to add to legend section
+     * @function getSymbology
+     * @param {Object} stack symbology stack from legend entry block
+     * @return {String} the html to add to legend section
+     */
+    getSymbology(stack: any): string;
     /**
      * Step the panel information and layer visibility up or down
      * @function step

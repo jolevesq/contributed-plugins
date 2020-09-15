@@ -92,13 +92,13 @@
       "layers": [
         {
           "id": "0",
-          "name": "petroleum",
+          "name": "hydrop",
           "layerType": "esriFeature",
           "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/20"
         },
         {
           "id": "1",
-          "name": "hydro",
+          "name": "etroleum",
           "layerType": "esriFeature",
           "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/24"
         },
