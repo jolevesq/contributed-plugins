@@ -50,13 +50,20 @@ export declare class SliderPanel {
      * @function setPanelInfo
      */
     private setPanelInfo;
+    getCustomLegend(): string;
+    /**
+     * Get the default legend when it is not define inside configuration
+     * @function getDefaultLegend
+     * @return {String} the html to add to legend section
+     */
+    private getDefaultLegend;
     /**
      * Get the symbology stack to add to legend section
      * @function getSymbology
      * @param {Object} stack symbology stack from legend entry block
      * @return {String} the html to add to legend section
      */
-    getSymbology(stack: any): string;
+    private getSymbology;
     /**
      * Step the panel information and layer visibility up or down
      * @function step
