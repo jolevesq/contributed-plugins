@@ -92,25 +92,25 @@
       "layers": [
         {
           "id": "0",
-          "name": "hydrop",
+          "name": "Hydro",
           "layerType": "esriFeature",
           "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/20"
         },
         {
           "id": "1",
-          "name": "etroleum",
+          "name": "Petroleum",
           "layerType": "esriFeature",
           "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/24"
         },
         {
           "id": "2",
-          "name": "solar",
+          "name": "Solar",
           "layerType": "esriFeature",
           "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/26"
         },
         {
           "id": "3",
-          "name": "wind",
+          "name": "Wind",
           "layerType": "esriFeature",
           "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/27"
         }
@@ -277,7 +277,7 @@
         "layers": [
           { "id": "0",
             "duration": 3000,
-            "title": "",
+            "title": "Title",
             "legend": [{
                 "image": {
                     "url": "https://raw.githubusercontent.com/showdownjs/logo/master/dist/logo.readme.png",
@@ -290,7 +290,7 @@
           }, {
             "id": "1",
             "duration": 3000,
-            "title": "",
+            "title": "Title",
             "legend": [{
                 "image": {
                     "url": "https://raw.githubusercontent.com/showdownjs/logo/master/dist/logo.readme.png",
@@ -303,7 +303,7 @@
           }, {
             "id": "2",
             "duration": 3000,
-            "title": "",
+            "title": "Title",
             "legend": [{
                 "image": {
                     "url": "https://avatars0.githubusercontent.com/u/139426?s=200&v=4",
@@ -316,7 +316,7 @@
           }, {
             "id": "3",
             "duration": 5000,
-            "title": "",
+            "title": "Title",
             "legend": [{
                 "image": {
                     "url": "https://raw.githubusercontent.com/showdownjs/logo/master/dist/logo.readme.png",

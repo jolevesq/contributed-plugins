@@ -92,25 +92,25 @@
       "layers": [
         {
           "id": "0",
-          "name": "hydrop",
+          "name": "Hydro",
           "layerType": "esriFeature",
           "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/20"
         },
         {
           "id": "1",
-          "name": "etroleum",
+          "name": "Petroleum",
           "layerType": "esriFeature",
           "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/24"
         },
         {
           "id": "2",
-          "name": "solar",
+          "name": "Solar",
           "layerType": "esriFeature",
           "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/26"
         },
         {
           "id": "3",
-          "name": "wind",
+          "name": "Wind",
           "layerType": "esriFeature",
           "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/27"
         }

@@ -1,6 +1,7 @@
 import { Observable, BehaviorSubject } from 'rxjs';
 export declare class SliderPanel {
     private _mapApi;
+    private _altText;
     private _panelSlider;
     private _panelOptionsSlider;
     private _index;
@@ -27,8 +28,9 @@ export declare class SliderPanel {
      * @constructor
      * @param {Any} mapApi the viewer api
      * @param {Any} config the slider configuration
+     * @param {String} altText the alternate text ot add to legend image
      */
-    constructor(mapApi: any, config: any);
+    constructor(mapApi: any, config: any, altText: string);
     /**
      * Open the panel
      * @function open
@@ -50,6 +52,11 @@ export declare class SliderPanel {
      * @function setPanelInfo
      */
     private setPanelInfo;
+    /**
+     * Set the panel legend with the active layer
+     * @function setPanelLegend
+     */
+    private setPanelLegend;
     getCustomLegend(): string;
     /**
      * Get the default legend when it is not define inside configuration
