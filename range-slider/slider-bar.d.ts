@@ -4,6 +4,7 @@ export declare class SliderBar {
     private _slider;
     private _mapApi;
     private _config;
+    private _myBundle;
     private _playInterval;
     private _range;
     private _limit;
@@ -19,7 +20,7 @@ export declare class SliderBar {
      * @param {Any} mapApi the viewer api
      * @param {Any} config the slider configuration
      */
-    constructor(mapApi: any, config: any);
+    constructor(mapApi: any, config: any, myBundle: any);
     /**
      * Start slider creation
      * @function
