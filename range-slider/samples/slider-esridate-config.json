@@ -279,6 +279,8 @@
     "plugins": {
       "rangeSlider": {
         "open": true,
+        "autorun": false,
+        "loop": false,
         "controls": ["lock", "delay", "export", "refresh"],
         "params": {
           "delay": 6000,

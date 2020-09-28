@@ -24,4 +24,5 @@ export default interface RangeSlider {
 export interface Range {
     min: number;
     max: number;
+    staticItems?: number[];
 }

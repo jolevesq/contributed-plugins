@@ -800,6 +800,8 @@
         "rangeSlider": {
             "enable": true,
             "open": true,
+            "autorun": false,
+            "loop": false,
             "controls": [
                 "lock",
                 "delay"
@@ -807,6 +809,8 @@
             "params": {
                 "type": "date",
                 "delay": "3000",
+                "rangeType": "dual",
+                "stepType": "dynamic",
                 "description": ""
             },
             "layers": [

@@ -647,7 +647,7 @@
                         "allStyles": [
                             ""
                         ],
-                        "id": "RADAR_1KM_RSNO&",
+                        "id": "RADAR_1KM_RSNO",
                         "name": ""
                     }
                 ],
@@ -804,6 +804,8 @@
         "rangeSlider": {
             "enable": true,
             "open": true,
+            "autorun": false,
+            "loop": false,
             "controls": [
                 "lock",
                 "delay",

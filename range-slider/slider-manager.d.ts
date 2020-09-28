@@ -14,7 +14,7 @@ export declare class SliderManager {
     * @param {Any} mapApi the viewer api
     * @param {Any} panel the slider panel
     * @param {Any} config the slider configuration
-    * @param {Any} myBunde the esri dependencies bundle
+    * @param {Any} myBundle the esri dependencies bundle
     */
     constructor(mapApi: any, panel: any, config: any, myBundle: any);
     /**

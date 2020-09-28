@@ -8,8 +8,13 @@ export declare class SliderBar {
     private _playInterval;
     private _range;
     private _limit;
+    private _limits;
     private _step;
     private _precision;
+    private _stepType;
+    private _rangeType;
+    private _interval;
+    private _intervalUnit;
     static _playState: BehaviorSubject<boolean>;
     static getPlayState(): Observable<boolean>;
     private static setPlayState;
@@ -30,13 +35,15 @@ export declare class SliderBar {
     startSlider(type: string, language: string): void;
     /**
      * Set ranges
-     * @function setRanges
+     * @function setNoUiBarRanges
      * @param {Number} width display width
      * @param {Range} limit min and max limit to set
-     * @param {Number} delta display width
+     * @param {String} rangeType range type (dual or single)
+     * @param {String} stepType step type (dynamic or static)
+     * @param {Number} step step value to use for (single and dynamic)
      * @return {Range} range the updated limits
      */
-    setRanges(width: number, limit: Range, delta: number): Range;
+    setNoUiBarRanges(width: number, limit: Range, rangeType: string, stepType: string, step: number): Range;
     /**
      * Set pips (slider labels) format
      * @function formatPips
@@ -46,6 +53,7 @@ export declare class SliderBar {
      * @return {any} value the formated value
      */
     formatPips(value: any, field: string, lang: string): any;
+    setTooltips(type: string, language: string): object[];
     /**
      * Set slider range
      * @property range
@@ -56,14 +64,23 @@ export declare class SliderBar {
     */
     range: Range;
     /**
-     * Set slider limit
+     * Set slider limit (dynamic)
      * @property limit
      */
     /**
-    * Get slider limit
+    * Get slider limit (dynamic)
     * @property limit
     */
     limit: Range;
+    /**
+     * Set slider limit (static)
+     * @property limit
+     */
+    /**
+    * Get slider limit (static)
+    * @property limit
+    */
+    limits: number[];
     /**
      * Set slider lock
      * @property lock
@@ -73,6 +90,11 @@ export declare class SliderBar {
     * @property lock
     */
     lock: boolean;
+    /**
+     * Get slider range type is dual
+     * @property lock
+     */
+    readonly dual: boolean;
     /**
      * Set slider loop
      * @property loop
@@ -155,7 +177,7 @@ export declare class SliderBar {
      * @param {Number} step step value
      * @return {Number} Left anchor value
      */
-    setLeftAnchor(values: number, direction: string, step: number): number;
+    setLeftAnchorDynamic(values: number[], direction: string, step: number): number;
     /**
      * Set right anchor
      * @function setRightAnchor
@@ -164,7 +186,9 @@ export declare class SliderBar {
      * @param {Number} step step value
      * @return {Number} Left anchor value
      */
-    setRightAnchor(values: number, direction: string, step: number): number;
+    setRightAnchorDynamic(values: number[], direction: string, step: number): number;
+    setLeftAnchorStatic(values: number, direction: string, step: number): number;
+    setRightAnchorStatic(values: number, direction: string, step: number): number;
     /**
      * Set definition query to filter the data
      * @function setDefinitionQuery
@@ -173,10 +197,24 @@ export declare class SliderBar {
     setDefinitionQuery(range: Range): void;
     /**
      * Set definition query to filter the data
-     * @function setDefinitionQuery
+     * @function getDate
      * @param {Range} range range to use to filter
      * @param {String} type type of date
      * @return {String[]} Array of string date  from date object
      */
     getDate(range: Range, type?: string): string[];
+    /**
+     * Format the date for ESRI string date
+     * @function getEsriDate
+     * @param {Date} date date to format
+     * @return {String}formated date
+     */
+    getEsriDate(date: Date): string;
+    /**
+     * Format the date for WMS-T string date
+     * @function getDateWMTS
+     * @param {Date} date date to format
+     * @return {String}formated date
+     */
+    getDateWMTS(date: Date): string;
 }

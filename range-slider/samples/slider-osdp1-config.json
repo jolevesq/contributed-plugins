@@ -38,10 +38,10 @@
             {
                 "id": "EXT_NRCAN_Lambert_3978",
                 "default": {
-                    "xmin": -4844430.556896179,
-                    "ymin": -1052774.037634491,
-                    "xmax": 5666163.380958509,
-                    "ymax": 4170111.408136484
+                    "xmin": 834332.8839641017,
+                    "ymin": 221197.2603081865,
+                    "xmax": 3902976.5212513767,
+                    "ymax": 1060986.4398865458
                 },
                 "full": {
                     "xmax": 5666163.380958509,
@@ -752,6 +752,8 @@
         "rangeSlider": {
             "enable": true,
             "open": true,
+            "autorun": false,
+            "loop": false,
             "controls": [
                 "lock",
                 "delay"
@@ -759,14 +761,10 @@
             "params": {
                 "type": "number",
                 "delay": "3000",
-                "range": {
-                    "min": null,
-                    "max": null
-                },
-                "limit": {
-                    "min": null,
-                    "max": null
-                },
+                "rangeType": "dual",
+                "stepType": "dynamic",
+                "range": { "min": null, "max": null },
+                "limit": { "min": null, "max": null },
                 "description": ""
             },
             "layers": [

@@ -362,7 +362,7 @@ input:focus + .noUi-tooltip {
       height: 40px; }
     .rv-rangeslider .slider-content .slider-bar {
       width: 100%;
-      padding: 10px 30px; }
+      padding: 10px 35px; }
       .rv-rangeslider .slider-content .slider-bar .slider-controls {
         display: flex;
         margin-top: 40px; }

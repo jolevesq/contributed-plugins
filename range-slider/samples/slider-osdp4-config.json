@@ -746,6 +746,8 @@
         "rangeSlider": {
             "enable": true,
             "open": true,
+            "autorun": false,
+            "loop": false,
             "controls": [
                 "lock",
                 "delay",
@@ -756,14 +758,19 @@
             "params": {
                 "type": "date",
                 "delay": "3000",
+                "rangeType": "dual",
+                "stepType": "dynamic",
+                "interval": 1,
+                "intervalUnit": "month",
                 "range": {
-                    "min": 1481544000000,
-                    "max": 1493035200001
+                    "min": 1483963200000,
+                    "max": 1483963200000
                 },
                 "limit": {
                     "min": 1367380800000,
-                    "max": 1600142400000
+                    "max": 1598932800000
                 },
+                "limits": [],
                 "description": ""
             },
             "layers": [
@@ -772,12 +779,6 @@
                     "field": "dStart"
                 }
             ]
-        },
-        "coordInfo": {
-            "enable": false
-        },
-        "AreasOfInterest": {
-            "enable": false
         }
     }
 }
