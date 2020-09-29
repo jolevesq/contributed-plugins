@@ -760,10 +760,9 @@
                 "delay": "3000",
                 "rangeType": "dual",
                 "stepType": "dynamic",
-                "interval": 1,
-                "intervalUnit": "month",
+                "precision": "date",
                 "range": {
-                    "min": 1483963200000,
+                    "min": 1367380800000,
                     "max": 1483963200000
                 },
                 "limit": {

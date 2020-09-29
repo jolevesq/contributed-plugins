@@ -389,12 +389,16 @@ input:focus + .noUi-tooltip {
             .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-bar-control.slider-switch div:last-of-type {
               margin-right: 5px; }
       .rv-rangeslider .slider-content .slider-bar .slider-widget {
-        width: 97%; }
+        width: 95%; }
       .rv-rangeslider .slider-content .slider-bar .slider-units {
-        width: 3%;
         right: 10px;
         position: absolute;
-        color: #999; }
+        color: #999;
+        word-break: break-all;
+        padding-left: 5px;
+        word-break: break-all;
+        width: 5%;
+        top: 15px; }
   .rv-rangeslider .slider-desc {
     color: #999; }
     .rv-rangeslider .slider-desc span {

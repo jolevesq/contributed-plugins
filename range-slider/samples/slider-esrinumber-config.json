@@ -272,7 +272,7 @@
           "stepType": "dynamic",
           "range": { "min": -120, "max": -115 },
           "limit": { "min": -120, "max": -90, "staticItems": [] },
-          "units": "Longitude"
+          "units": "Longitudemaxmaxmax"
         },
         "layers": [{
             "id": "0",

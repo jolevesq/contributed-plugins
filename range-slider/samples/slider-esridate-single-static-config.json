@@ -287,6 +287,7 @@
           "type": "date",
           "rangeType": "single",
           "stepType": "static",
+          "precision": "hour",
           "range": { "min": 1114602128000, "max": null },
           "limit": { "min": 1072958400000, "max": 1486048116000, "staticItems": [1072958400000, 1091731771000, 1094574856000, 1102714899000, 1114602128000, 1244805838000] },
           "units": ""
