@@ -57,6 +57,11 @@ export declare class SliderPanel {
      * @function setPanelLegend
      */
     private setPanelLegend;
+    /**
+     * Get the custom legend when define inside configuration
+     * @function getDefaultLegend
+     * @return {String} the html to add to legend section
+     */
     getCustomLegend(): string;
     /**
      * Get the default legend when it is not define inside configuration
