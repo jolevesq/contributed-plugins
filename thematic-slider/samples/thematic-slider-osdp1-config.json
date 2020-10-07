@@ -1508,7 +1508,6 @@
             "open": true,
             "autorun": true,
             "loop": false,
-            "description": true,
             "slider": true,
             "stack": false,
             "legendStack": false,
