@@ -1511,6 +1511,7 @@
             "description": true,
             "slider": true,
             "stack": false,
+            "legendStack": false,
             "layers": [
                 {
                     "duration": 3000,

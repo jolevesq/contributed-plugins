@@ -326,6 +326,7 @@
         "description": true,
         "slider": true,
         "stack": false,
+        "legendStack": false,
         "layers": [
           { "id": "0",
             "duration": 5000,

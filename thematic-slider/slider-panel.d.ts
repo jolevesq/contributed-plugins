@@ -10,6 +10,7 @@ export declare class SliderPanel {
     private _layerNb;
     private _loop;
     private _stack;
+    private _legendStack;
     static _playState: BehaviorSubject<boolean>;
     static getPlayState(): Observable<boolean>;
     private static setPlayState;
@@ -54,6 +55,7 @@ export declare class SliderPanel {
     private setPanelInfo;
     /**
      * Set the panel legend with the active layer
+     * @param {String} direction the direction to step
      * @function setPanelLegend
      */
     private setPanelLegend;
