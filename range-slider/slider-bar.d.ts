@@ -187,8 +187,6 @@ export declare class SliderBar {
      * @return {Number} Left anchor value
      */
     setRightAnchorDynamic(values: number[], direction: string, step: number): number;
-    setLeftAnchorStatic(values: number, direction: string, step: number): number;
-    setRightAnchorStatic(values: number, direction: string, step: number): number;
     /**
      * Set definition query to filter the data
      * @function setDefinitionQuery

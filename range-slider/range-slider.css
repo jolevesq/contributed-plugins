@@ -327,7 +327,14 @@ input:focus + .noUi-tooltip {
 
 @media (max-width: 374px) {
   .slider-delay-control {
-    display: none !important; } }
+    display: none !important; }
+  .slider-export-control, .slider-refresh-control {
+    display: none !important; }
+  .slider-loop-control {
+    display: none !important; }
+  #rangeSlider {
+    margin-left: 10px !important;
+    opacity: 1 !important; } }
 
 @media (max-width: 1023px) {
   .slider-export-control, .slider-refresh-control {
