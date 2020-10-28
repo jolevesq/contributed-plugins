@@ -325,25 +325,47 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 input:focus + .noUi-tooltip {
   display: block; }
 
-@media (max-width: 374px) {
-  .slider-delay-control {
-    display: none !important; }
-  .slider-export-control, .slider-refresh-control {
-    display: none !important; }
-  .slider-loop-control {
-    display: none !important; }
+@media screen and (max-width: 767px) {
   #rangeSlider {
-    margin-left: 10px !important;
-    opacity: 1 !important; } }
+    margin-left: auto !important;
+    margin-right: 60px !important;
+    width: fit-content !important;
+    top: calc(100% - 100px) !important;
+    height: 50px !important; }
+    #rangeSlider .panel-body {
+      padding: 0px !important; }
+      #rangeSlider .panel-body .rv-rangeslider {
+        padding: 0px !important; }
+        #rangeSlider .panel-body .rv-rangeslider .slider-bar {
+          padding: 0px !important; }
+          #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-bar-noui, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-desc {
+            display: none !important; }
+          #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-export-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-refresh-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-lock-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-delay-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-desc-control {
+            display: none !important; } }
 
-@media (max-width: 1023px) {
-  .slider-export-control, .slider-refresh-control {
-    display: none !important; }
-  .slider-loop-control {
+@media screen and (max-width: 1439px) and (min-width: 768px) {
+  .slider-export-control {
     display: none !important; }
   #rangeSlider {
-    margin-left: 10px !important;
-    opacity: 1 !important; } }
+    opacity: 1 !important;
+    margin-left: 10px !important; } }
+
+.test-pure-ui #rangeSlider {
+  margin-left: auto !important;
+  margin-right: 60px !important;
+  width: fit-content !important;
+  top: calc(100% - 100px) !important;
+  height: 50px !important; }
+  .test-pure-ui #rangeSlider .panel-body {
+    padding: 0px !important; }
+    .test-pure-ui #rangeSlider .panel-body .rv-rangeslider {
+      padding: 0px !important; }
+      .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar {
+        padding: 0px !important; }
+        .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-bar-noui, .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-desc {
+          display: none !important; }
+        .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-export-control, .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-refresh-control, .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-lock-control, .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-delay-control, .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-desc-control {
+          display: none !important; }
 
 #rangeSlider {
   opacity: 0.7; }
@@ -368,11 +390,15 @@ input:focus + .noUi-tooltip {
       display: flex;
       height: 40px; }
     .rv-rangeslider .slider-content .slider-bar {
+      display: flex;
+      flex-direction: column;
       width: 100%;
       padding: 10px 35px; }
+      .rv-rangeslider .slider-content .slider-bar .slider-bar-noui {
+        width: 100%;
+        height: 50px; }
       .rv-rangeslider .slider-content .slider-bar .slider-controls {
-        display: flex;
-        margin-top: 40px; }
+        display: flex; }
         .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-bar-control {
           display: flex;
           align-items: center;
