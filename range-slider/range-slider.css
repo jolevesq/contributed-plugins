@@ -325,12 +325,12 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 input:focus + .noUi-tooltip {
   display: block; }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   #rangeSlider {
     margin-left: auto !important;
     margin-right: 60px !important;
     width: fit-content !important;
-    top: calc(100% - 100px) !important;
+    top: calc(100% - 110px) !important;
     height: 50px !important; }
     #rangeSlider .panel-body {
       padding: 0px !important; }
@@ -340,32 +340,35 @@ input:focus + .noUi-tooltip {
           padding: 0px !important; }
           #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-bar-noui, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-desc {
             display: none !important; }
-          #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-export-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-refresh-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-lock-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-delay-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-desc-control {
-            display: none !important; } }
+          #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls {
+            margin-right: 45px; }
+            #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-export-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-refresh-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-lock-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-delay-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-desc-control {
+              display: none !important; } }
 
-@media screen and (max-width: 1439px) and (min-width: 768px) {
+@media screen and (max-width: 1439px) and (min-width: 769px) {
   .slider-export-control {
     display: none !important; }
   #rangeSlider {
-    opacity: 1 !important;
     margin-left: 10px !important; } }
 
-.test-pure-ui #rangeSlider {
+.slider-min-ui #rangeSlider {
   margin-left: auto !important;
   margin-right: 60px !important;
   width: fit-content !important;
-  top: calc(100% - 100px) !important;
+  top: calc(100% - 110px) !important;
   height: 50px !important; }
-  .test-pure-ui #rangeSlider .panel-body {
+  .slider-min-ui #rangeSlider .panel-body {
     padding: 0px !important; }
-    .test-pure-ui #rangeSlider .panel-body .rv-rangeslider {
+    .slider-min-ui #rangeSlider .panel-body .rv-rangeslider {
       padding: 0px !important; }
-      .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar {
+      .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar {
         padding: 0px !important; }
-        .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-bar-noui, .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-desc {
+        .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-bar-noui, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-desc {
           display: none !important; }
-        .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-export-control, .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-refresh-control, .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-lock-control, .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-delay-control, .test-pure-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-desc-control {
-          display: none !important; }
+        .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls {
+          margin-right: 45px; }
+          .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-export-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-refresh-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-lock-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-delay-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-desc-control {
+            display: none !important; }
 
 #rangeSlider {
   opacity: 0.7; }
@@ -383,6 +386,10 @@ input:focus + .noUi-tooltip {
     overflow: hidden;
     width: 100%;
     flex-direction: row; }
+    .rv-rangeslider .slider-content .slider-minmax-control {
+      right: 0px;
+      position: absolute;
+      top: 0px; }
     .rv-rangeslider .slider-content .slider-settings .slider-global {
       display: flex;
       height: 40px; }
