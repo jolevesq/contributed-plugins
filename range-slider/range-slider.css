@@ -340,10 +340,10 @@ input:focus + .noUi-tooltip {
           padding: 0px !important; }
           #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-bar-noui, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-desc {
             display: none !important; }
-          #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls {
-            margin-right: 45px; }
-            #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-export-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-refresh-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-lock-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-delay-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-desc-control {
-              display: none !important; } }
+          #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-export-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-refresh-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-lock-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-delay-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-desc-control {
+            display: none !important; }
+  .slider-minmax-control {
+    display: none !important; } }
 
 @media screen and (max-width: 1439px) and (min-width: 769px) {
   .slider-export-control {
@@ -365,10 +365,11 @@ input:focus + .noUi-tooltip {
         padding: 0px !important; }
         .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-bar-noui, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-desc {
           display: none !important; }
-        .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls {
-          margin-right: 45px; }
-          .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-export-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-refresh-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-lock-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-delay-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-desc-control {
-            display: none !important; }
+        .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-export-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-refresh-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-lock-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-delay-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-desc-control {
+          display: none !important; }
+
+.slider-min-ui .slider-controls {
+  margin-right: 45px; }
 
 #rangeSlider {
   opacity: 0.7; }
@@ -429,9 +430,9 @@ input:focus + .noUi-tooltip {
             .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-bar-control.slider-switch div:last-of-type {
               margin-right: 5px; }
       .rv-rangeslider .slider-content .slider-bar .slider-widget {
-        width: 95%; }
+        width: 93%; }
       .rv-rangeslider .slider-content .slider-bar .slider-units {
-        right: 10px;
+        right: 40px;
         position: absolute;
         color: #999;
         word-break: break-all;
