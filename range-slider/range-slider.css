@@ -336,12 +336,14 @@ input:focus + .noUi-tooltip {
       padding: 0px !important; }
       #rangeSlider .panel-body .rv-rangeslider {
         padding: 0px !important; }
-        #rangeSlider .panel-body .rv-rangeslider .slider-bar {
-          padding: 0px !important; }
-          #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-bar-noui, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-desc {
-            display: none !important; }
-          #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-export-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-refresh-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-lock-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-delay-control, #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-desc-control {
-            display: none !important; }
+        #rangeSlider .panel-body .rv-rangeslider .slider-content {
+          width: min-content; }
+          #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar {
+            padding: 0px !important; }
+            #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar .slider-bar-noui, #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar .slider-desc {
+              display: none !important; }
+            #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-export-control, #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-refresh-control, #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-lock-control, #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-delay-control, #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-desc-control {
+              display: none !important; }
   .slider-minmax-control {
     display: none !important; } }
 
@@ -361,12 +363,14 @@ input:focus + .noUi-tooltip {
     padding: 0px !important; }
     .slider-min-ui #rangeSlider .panel-body .rv-rangeslider {
       padding: 0px !important; }
-      .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar {
-        padding: 0px !important; }
-        .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-bar-noui, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-desc {
-          display: none !important; }
-        .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-export-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-refresh-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-lock-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-delay-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-bar .slider-controls .slider-desc-control {
-          display: none !important; }
+      .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-content {
+        width: min-content; }
+        .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar {
+          padding: 0px !important; }
+          .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar .slider-bar-noui, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar .slider-desc {
+            display: none !important; }
+          .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-export-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-refresh-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-lock-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-delay-control, .slider-min-ui #rangeSlider .panel-body .rv-rangeslider .slider-content .slider-bar .slider-controls .slider-desc-control {
+            display: none !important; }
 
 .slider-min-ui .slider-controls {
   margin-right: 45px; }
