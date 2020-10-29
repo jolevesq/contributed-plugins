@@ -1,5 +1,5 @@
 export declare const SLIDER_TEMPLATE = "\n<div rv-focus-member class=\"rv-rangeslider\">\n    <div class=\"slider-content\">\n        <div class=\"slider-bar\">\n            <div class=\"slider-bar-noui\"><div id=\"nouislider\" class=\"slider-widget\"></div><span class=\"slider-units\"></span></div>\n            <div class=\"slider-controls\"></div>\n        </div>\n        <div class=\"slider-desc\">\n            <span class=\"slider-desc-layers\"></span>\n            <span class=\"slider-desc-info\"></span>\n        </div>\n    </div>\n</div>";
-export declare const MIN_MAX_TEMPLATE: string;
+export declare const MIN_MAX_TEMPLATE = "\n<div class=\"slider-bar-control slider-minmax-control\" ng-controller=\"MinMaxSliderCtrl as ctrl\">\n    <md-button\n        aria-label=\"{{ !ctrl.isMax ? 'plugins.rangeSlider.maximize' : 'plugins.rangeSlider.minimize' | translate }}\"\n        class=\"md-icon-button rv-button-24 slider-max-control-icon\"\n        ng-click=\"ctrl.show()\">\n        <md-tooltip>{{ !ctrl.isMax ? 'plugins.rangeSlider.maximize' : 'plugins.rangeSlider.minimize' | translate }}</md-tooltip>\n        <md-icon md-svg-src=\"community:apple-keyboard-control\"></md-icon>\n    </md-button>\n</div>";
 export declare const DESC_BAR_TEMPLATE: string;
 export declare const LOCK_BAR_TEMPLATE: string;
 export declare const LOOP_BAR_TEMPLATE: string;
