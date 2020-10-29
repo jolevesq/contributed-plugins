@@ -399,7 +399,7 @@ input:focus + .noUi-tooltip {
       right: 0px;
       position: absolute;
       top: 0px;
-      transform: rotate(225deg); }
+      transform: translate(8px, -4px) rotate(225deg); }
       .rv-rangeslider .slider-content .slider-minmax-control .slider-max-control-icon {
         transform: rotate(180deg); }
     .rv-rangeslider .slider-content .slider-settings .slider-global {
