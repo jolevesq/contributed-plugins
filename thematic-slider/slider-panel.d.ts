@@ -1,6 +1,7 @@
 import { Observable, BehaviorSubject } from 'rxjs';
 export declare class SliderPanel {
     private _mapApi;
+    private _altText;
     private _panelSlider;
     private _panelOptionsSlider;
     private _index;
@@ -9,12 +10,16 @@ export declare class SliderPanel {
     private _layerNb;
     private _loop;
     private _stack;
+    private _legendStack;
     static _playState: BehaviorSubject<boolean>;
     static getPlayState(): Observable<boolean>;
     private static setPlayState;
     static _description: BehaviorSubject<object>;
     static getDescription(): Observable<object>;
     private static setDescription;
+    static _legendState: BehaviorSubject<boolean>;
+    static getLegendState(): Observable<boolean>;
+    private static setLegendState;
     static _end: BehaviorSubject<string>;
     static getLastStep(): Observable<string>;
     private static setLastStep;
@@ -24,8 +29,9 @@ export declare class SliderPanel {
      * @constructor
      * @param {Any} mapApi the viewer api
      * @param {Any} config the slider configuration
+     * @param {String} altText the alternate text ot add to legend image
      */
-    constructor(mapApi: any, config: any);
+    constructor(mapApi: any, config: any, altText: string);
     /**
      * Open the panel
      * @function open
@@ -47,6 +53,31 @@ export declare class SliderPanel {
      * @function setPanelInfo
      */
     private setPanelInfo;
+    /**
+     * Set the panel legend with the active layer
+     * @param {String} direction the direction to step
+     * @function setPanelLegend
+     */
+    private setPanelLegend;
+    /**
+     * Get the custom legend when define inside configuration
+     * @function getDefaultLegend
+     * @return {String} the html to add to legend section
+     */
+    getCustomLegend(): string;
+    /**
+     * Get the default legend when it is not define inside configuration
+     * @function getDefaultLegend
+     * @return {String} the html to add to legend section
+     */
+    private getDefaultLegend;
+    /**
+     * Get the symbology stack to add to legend section
+     * @function getSymbology
+     * @param {Object} stack symbology stack from legend entry block
+     * @return {String} the html to add to legend section
+     */
+    private getSymbology;
     /**
      * Step the panel information and layer visibility up or down
      * @function step
