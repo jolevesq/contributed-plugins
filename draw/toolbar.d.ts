@@ -170,7 +170,7 @@ export declare class DrawToolbar {
      * @function addToMap
      * @param {Any} event esri toolbar event
      */
-    addToMap(evt: any, isEdit?: boolean): void;
+    addToMap(evt: any): void;
     /**
      * remove duplicate vertices inside geometry
      * @function removeDuplicate

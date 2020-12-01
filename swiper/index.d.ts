@@ -5,7 +5,6 @@ export default class Swiper {
     * @param {Object} mapApi the viewer api
     */
     private layerNb;
-    private layerNames;
     init(mapApi: any): void;
     /**
     * Set the swiper
@@ -21,12 +20,6 @@ export default class Swiper {
     * @param {Object[]} params array of variables to set
     */
     closureFunc: (fn: any, ...params: number[]) => () => any;
-    /**
-    * Get browser window width to setup the swiper in the middle of it
-    * @function getWidth
-    * @return {number} browser window width
-    */
-    getWidth(): number;
 }
 interface config {
     type: string;

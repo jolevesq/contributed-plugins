@@ -1,7 +1,6 @@
 export default class ThematicSlider {
     private _button;
     private _panel;
-    private _panelDetails;
     /**
     * Plugin init
     * @function init
@@ -15,7 +14,7 @@ export default class ThematicSlider {
     */
     onMenuItemClick(): () => void;
     /**
-    * Disable main app bar toc buttons to avoid collision
+    * Disable main app bar buttons except sidenav when thematic slider is open to avoid collision
     * @function setButtonState
     * @param {Boolean} disable disable or not the buttons
     */
