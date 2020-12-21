@@ -58,70 +58,77 @@ export declare class SliderBar {
      * Set slider range
      * @property range
      */
+    set range(value: Range);
     /**
-    * Get slider range
-    * @property range
-    */
-    range: Range;
+     * Get slider range
+     * @property range
+     */
+    get range(): Range;
     /**
      * Set slider limit (dynamic)
      * @property limit
      */
+    set limit(value: Range);
     /**
-    * Get slider limit (dynamic)
-    * @property limit
-    */
-    limit: Range;
+     * Get slider limit (dynamic)
+     * @property limit
+     */
+    get limit(): Range;
     /**
      * Set slider limit (static)
      * @property limit
      */
+    set limits(value: number[]);
     /**
-    * Get slider limit (static)
-    * @property limit
-    */
-    limits: number[];
+     * Get slider limit (static)
+     * @property limit
+     */
+    get limits(): number[];
     /**
      * Set slider lock
      * @property lock
      */
+    set lock(lock: boolean);
     /**
-    * Get slider lock
-    * @property lock
-    */
-    lock: boolean;
+     * Get slider lock
+     * @property lock
+     */
+    get lock(): boolean;
     /**
      * Get slider range type is dual
      * @property lock
      */
-    readonly dual: boolean;
+    get dual(): boolean;
     /**
      * Set slider loop
      * @property loop
      */
+    set loop(loop: boolean);
     /**
-    * Get slider loop
-    * @property loop
-    */
-    loop: boolean;
+     * Get slider loop
+     * @property loop
+     */
+    get loop(): boolean;
     /**
      * Set slider delay
      * @property delay
      */
+    set delay(delay: number);
     /**
-    * Get slider delay
-    * @property delay
-    */
-    delay: number;
+     * Get slider delay
+     * @property delay
+     */
+    get delay(): number;
     /**
      * Set slider export
      * @property export
      */
+    set export(exp: boolean);
     /**
-    * Get slider export
-    * @property export
-    */
-    export: boolean;
+     * Get slider export
+     * @property export
+     */
+    get export(): boolean;
     /**
      * Set play or pause on the slider
      * @function play
