@@ -28,6 +28,7 @@ interface dataset {
     backgroundColor: string[];
 }
 export interface ChartPie {
+    _RV: any;
     options: any;
     type: string;
     data: any;

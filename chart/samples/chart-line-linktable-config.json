@@ -91,9 +91,13 @@
       "layers": [
         {
           "id": "0",
-          "name": "Graphics",
-          "layerType": "esriFeature",
-          "url": "https://webservices.maps.canada.ca/arcgis/rest/services/Test_FGP/test_data/MapServer/0"
+          "name": "Water Quality",
+          "layerType": "esriDynamic",
+          "url": "https://maps-cartes.ec.gc.ca/arcgis/rest/services/Shellfish_Sites_Samples_Mollusques_Echantillons/MapServer/",
+          "layerEntries": [{
+            "index": 1,
+            "name": "Points"
+          }]
         }
       ],
       "extentSets": [
@@ -271,31 +275,23 @@
         },
         "layers": [{
             "id": "0",
-            "nameField": "locatoin / emplacement",
+            "nameField": "Site",
+            "type": "link",
+            "linkUrl": "https://maps-cartes.ec.gc.ca/arcgis/rest/services/Shellfish_Sites_Samples_Mollusques_Echantillons/MapServer/9",
+            "linkField": "Site",
             "data": [{
-              "type": "combine",
-              "measure": "Measure 2 (Data)",
-              "label": {
-                "type": "field",
-                "values": "Measure 2 (Name)",
-                "split": ""
-              },
-              "regex": "\\(|\\),\\(|\\)",
-              "split": ",",
-              "prefix": "",
-              "suffix": "mBq / m3"
-            }, {
-              "type": "combine",
-              "measure": "Measure 3 (Data)",
-              "label": {
-                "type": "field",
-                "values": "Measure 3 (Name)",
-                "split": ""
-              },
-              "regex": "\\(|\\),\\(|\\)",
-              "split": ",",
-              "prefix": "",
-              "suffix": "mBq / m3"
+                "type": "combine",
+                "measure": "FC_MPN_CF_NPP_100_mL",
+                "date": "Date",
+                "label": {
+                  "type": "config",
+                  "values": "FC MPN",
+                  "split": ""
+                },
+                "regex": "\\(|\\),\\(|\\)",
+                "split": ",",
+                "prefix": "Concentration",
+                "suffix": "by 100 / ml"
             }],
             "details": {
               "enabled": false,

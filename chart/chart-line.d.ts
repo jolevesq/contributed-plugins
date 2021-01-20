@@ -1,3 +1,4 @@
+import 'chartjs-adapter-date-fns';
 /**
  * Creates line charts.
  */
@@ -63,5 +64,6 @@ export interface ChartLine {
     type: string;
     data: any;
     title: string;
+    language: string;
     ranges: any;
 }
