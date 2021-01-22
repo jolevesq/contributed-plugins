@@ -339,6 +339,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   padding: 1px 4px;
   display: none; }
 
+#chart .rv-header-content {
+  display: contents; }
+
 .rv-chart-panel {
   height: 100%;
   overflow: hidden;
@@ -346,7 +349,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   padding: 0 10px; }
   .rv-chart-panel .rv-chart-sliderY {
     display: flex;
-    height: 60%; }
+    height: 80%;
+    padding-right: 50px; }
     .rv-chart-panel .rv-chart-sliderY #nouisliderY {
       height: inherit;
       align-self: center;
