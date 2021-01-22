@@ -1,3 +1,4 @@
+/// <reference types="jquery" />
 import { Observable, BehaviorSubject } from 'rxjs';
 export default class Chart {
     private _mapApi;
@@ -38,7 +39,7 @@ export default class Chart {
      * @param {String} template measure control
      * @return {JQuery<HTMLElement>} temp compile template
      */
-    private compileTemplate;
+    compileTemplate(template: string): JQuery<HTMLElement>;
 }
 export default interface Chart {
     _RV: any;
