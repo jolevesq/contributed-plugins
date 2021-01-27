@@ -284,6 +284,7 @@
         },
         "layers": [{
             "id": "0",
+            "nameField": "OBJECTID",
             "data": [{
               "type": "single",
               "measure": "data",
@@ -303,6 +304,7 @@
             }
         }, {
             "id": "2",
+            "nameField": "OBJECTID",
             "data": [{
               "type": "single",
               "measure": "data",

@@ -3,7 +3,6 @@
  */
 export declare class ChartLoader {
     private _chart;
-    private _config;
     private _mapApi;
     private _panel;
     private _sliderX;
@@ -16,12 +15,6 @@ export declare class ChartLoader {
     private _barChartOptions;
     private _pieChartOptions;
     static defaultColors: string[];
-    /**
-     * set configuration
-     * @property config
-     * @param {Object} value the configuration to use
-     */
-    set config(value: object);
     /**
      * Chart loader constructor
      * @constructor
@@ -73,20 +66,23 @@ export declare class ChartLoader {
      * Create pie chart
      * @function createPieChart
      * @param {Object} attrs attributes to use for the graph
+     * @param {Any} config the configuration for the chart
      */
-    createPieChart(attrs: object): void;
+    createPieChart(attrs: object, config: any): void;
     /**
      * Create bar chart
      * @function createBarChart
      * @param {Object} attrs attributes to use for the graph
+     * @param {Any} config the configuration for the chart
      */
-    createBarChart(attrs: object): void;
+    createBarChart(attrs: object, config: any): void;
     /**
      * Create line chart
      * @function createLineChart
      * @param {Object} attrs attributes to use for the graph
+     * @param {Any} config the configuration for the chart
      */
-    createLineChart(attrs: object): void;
+    createLineChart(attrs: object, config: any): void;
     /**
      * Draw the chart
      * @function draw

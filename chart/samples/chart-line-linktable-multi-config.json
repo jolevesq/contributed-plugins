@@ -282,19 +282,19 @@
             "data": [{
                 "type": "combine",
                 "linkType": "multi",
-                "link": "SITE_NO",
+                "link": "Site_number",
                 "measure": "VALUE_VALEUR",
                 "values": "VARIABLE_NAME",
                 "date": "DATE",
                 "label": {
                   "type": "config",
-                  "values": "FC MPN",
+                  "values": "",
                   "split": ""
                 },
                 "regex": "\\(|\\),\\(|\\)",
                 "split": ",",
-                "prefix": "Concentration",
-                "suffix": "by 100 / ml"
+                "prefix": "",
+                "suffix": "MG/L"
             }],
             "details": {
               "enabled": false,
