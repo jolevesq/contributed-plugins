@@ -17,12 +17,17 @@ export declare class ChartLoader {
     private _pieChartOptions;
     static defaultColors: string[];
     /**
+     * set configuration
+     * @property config
+     * @param {Object} value the configuration to use
+     */
+    set config(value: object);
+    /**
      * Chart loader constructor
      * @constructor
      * @param {Any} mapApi the viewer api
-     * @param {Any} config the slider configuration
      */
-    constructor(mapApi: any, config: any);
+    constructor(mapApi: any);
     /**
      * Initialize the slider
      * @function initSlider
@@ -50,15 +55,20 @@ export declare class ChartLoader {
      */
     parseRange(xRange: any, yRange: any, data: any): object[];
     /**
+     * Destroy the slider and chart
+     * @function destroy
+     */
+    destroy(): void;
+    /**
      * Destroy the slider
      * @function destroySlider
      */
-    destroySlider(): void;
+    private destroySlider;
     /**
      * Destroy the chart
      * @function destroyChart
      */
-    destroyChart(): void;
+    private destroyChart;
     /**
      * Create pie chart
      * @function createPieChart
@@ -88,7 +98,7 @@ export declare class ChartLoader {
      * @function getGlobalOptions
      * @return {Object} the global options
      */
-    getGlobalOptions(): object;
+    private getGlobalOptions;
     /**
      * Parse feature datasets
      * @function parse

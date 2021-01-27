@@ -1,30 +1,15 @@
-/// <reference types="jquery" />
-import { Observable, BehaviorSubject } from 'rxjs';
 export default class Chart {
     private _mapApi;
     private _panel;
     private _panelDetails;
     private _loader;
     private _panelOptions;
-    private _isCharts;
-    private _chartAttrs;
-    static _charts: BehaviorSubject<string>;
-    static getCharts(): Observable<string>;
-    private static setCharts;
     /**
     * Plugin init
     * @function init
     * @param {Object} mapApi the viewer api
     */
     init(mapApi: any): void;
-    setChartsArray(key: string, type: string, feat: any): void;
-    /**
-    * Create the chart
-    * @function createChart
-    * @param {String} type type of chart ot create
-    * @param {Object} feat the feature
-    */
-    createChart(type: string, feat: any): void;
     /**
     * Set details panel value
     * @function findDetailsconfig
@@ -39,7 +24,7 @@ export default class Chart {
      * @param {String} template measure control
      * @return {JQuery<HTMLElement>} temp compile template
      */
-    compileTemplate(template: string): JQuery<HTMLElement>;
+    private compileTemplate;
 }
 export default interface Chart {
     _RV: any;

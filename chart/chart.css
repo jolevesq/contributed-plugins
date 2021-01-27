@@ -347,6 +347,15 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   overflow: hidden;
   display: flex;
   padding: 0 10px; }
+  .rv-chart-panel .rv-chart-nodata {
+    text-align: center;
+    top: 50%;
+    position: absolute;
+    width: 100%;
+    font-size: 24px;
+    display: none; }
+  .rv-chart-panel .rv-chart-loading {
+    display: none; }
   .rv-chart-panel .rv-chart-sliderY {
     display: flex;
     height: 80%;
@@ -374,9 +383,3 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .rv-chart-select {
   padding: 0 30px;
   width: 200px; }
-
-.rv-chart-nodata {
-  text-align: center;
-  top: 50%;
-  position: relative;
-  font-size: 24px; }

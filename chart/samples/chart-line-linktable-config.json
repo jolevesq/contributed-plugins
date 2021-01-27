@@ -281,6 +281,8 @@
             "linkField": "Site",
             "data": [{
                 "type": "combine",
+                "linkType": "single",
+                "link": "Site",
                 "measure": "FC_MPN_CF_NPP_100_mL",
                 "date": "Date",
                 "label": {
