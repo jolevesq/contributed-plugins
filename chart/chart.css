@@ -359,7 +359,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   .rv-chart-panel .rv-chart-sliderY {
     display: flex;
     height: 80%;
-    padding-right: 50px; }
+    padding-right: 100px; }
     .rv-chart-panel .rv-chart-sliderY #nouisliderY {
       height: inherit;
       align-self: center;

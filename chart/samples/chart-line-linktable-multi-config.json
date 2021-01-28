@@ -264,7 +264,7 @@
           },
           "yAxis": {
             "type": "linear",
-            "title": "My values",
+            "title": "MG/L",
             "values": "",
             "split": ""
           }

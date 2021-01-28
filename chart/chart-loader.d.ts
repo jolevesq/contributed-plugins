@@ -28,25 +28,42 @@ export declare class ChartLoader {
      * @param {Number} min minimum value for slider
      * @param {Number} max maximum value for slider
      * @param {String} xType the x axis type, date or linear
+     * @param {String} language the viewer language
      */
-    initSlider(slider: any, min: number, max: number, type: string): void;
+    initSlider(slider: any, min: number, max: number, type: string, language: string): void;
     /**
-     * Parse the graph pips labels value
+     * Set pips (slider labels) format
+     * @function formatPips
+     * @param {Any} value the value to display (number, string or date)
+     * @param {String} lang the language to use
+     * @return {any} value the formated value
+     */
+    formatPips(value: any, type: any, lang: string): any;
+    /**
+     * Format tooltips
+     * @function setTooltips
+     * @param {string} type type of tooltips (will be pass to format pips function)
+     * @param {string} language the viewer language
+     * @return {Object[]} tooltips as an array of tooltip object
+     */
+    setTooltips(type: string, language: string): object[];
+    /**
+     * Parse the graph pips labels value and set slider range
      * @function parsePips
      * @param {String} axis axis to parse labels for (x or y)
      * @param {Date} type the type of axis (linear or date)
      * @param {Any} min min range to parse the value
      * @param {Any} max max range to parse the value
      */
-    parsePips(axis: string, type: string, min: any, max: any): void;
+    setSliderRanges(axis: string, type: string, min: any, max: any): void;
     /**
      * Parse the graph value with the range from the slider
-     * @function parseRange
+     * @function parseDatasetsRange
      * @param {Any} xRange x range values to filter
      * @param {Any} yRange y range values to filter
      * @param {Any} data data to filter
      */
-    parseRange(xRange: any, yRange: any, data: any): object[];
+    parseDatasetsRange(xRange: any, yRange: any, data: any): object[];
     /**
      * Destroy the slider and chart
      * @function destroy
