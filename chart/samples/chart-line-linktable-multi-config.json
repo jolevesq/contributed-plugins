@@ -254,7 +254,7 @@
     "plugins": {
       "chart": {
         "type": "line",
-        "title": "my chart",
+        "title": "Water Quality",
         "axis": {
           "xAxis": {
             "type": "date",
@@ -264,7 +264,7 @@
           },
           "yAxis": {
             "type": "linear",
-            "title": "MG/L",
+            "title": "MG / L",
             "values": "",
             "split": ""
           }

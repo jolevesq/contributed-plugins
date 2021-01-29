@@ -1,5 +1,7 @@
 /**
  * Creates pie and doughnut charts.
+ * @exports
+ * @class ChartPie
  */
 export declare class ChartPie {
     /**

@@ -1,3 +1,8 @@
+/**
+ * Class to manage the custom details panel
+ * @exports
+ * @class DetailsManager
+ */
 export declare class DetailsManager {
     private _panelDetails;
     private _panelTrigger;

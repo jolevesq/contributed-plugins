@@ -1,6 +1,8 @@
 import 'chartjs-adapter-date-fns';
 /**
  * Creates line charts.
+ * @exports
+ * @class ChartLine
  */
 export declare class ChartLine {
     private _data;

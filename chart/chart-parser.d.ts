@@ -1,4 +1,9 @@
 import { Observable, BehaviorSubject } from 'rxjs';
+/**
+ * Class to parse value from different type
+ * @exports
+ * @class ChartParser
+ */
 export declare class ChartParser {
     static _chartAttrs: any[];
     private static _nbFeats;
@@ -27,7 +32,7 @@ export declare class ChartParser {
     private static processMultipleLinkedData;
     /**
      * Process linked table data. Add a new field to the feature who mimic
-     * the format needed with the value fomr the data linked table
+     * the format needed with the value from the data linked table
      * @function processSingleLinkedData
      * @param {Any} config the plugin config
      * @param {Any} feature the clicked feature
@@ -37,7 +42,7 @@ export declare class ChartParser {
      */
     private static processSingleLinkedData;
     /**
-     * Get the value layers config section f0r the specified layer
+     * Get the value layers config section for the specified layer
      * @param {Any} config the configuration
      * @param {String} layerId the layer id to find
      * @returns {Any} the layer's configuration

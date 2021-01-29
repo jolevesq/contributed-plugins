@@ -1,5 +1,7 @@
 /**
  * Creates and manages charts.
+ * @exports
+ * @class ChartLoader
  */
 export declare class ChartLoader {
     private _chart;

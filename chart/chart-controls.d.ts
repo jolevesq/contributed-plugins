@@ -1,4 +1,9 @@
 import { ChartLoader } from './chart-loader';
+/**
+ * Class to manage the selection control and lauch chart creation
+ * @exports
+ * @class ChartControls
+ */
 export declare class ChartControls {
     /**
      * Slider controls constructor
