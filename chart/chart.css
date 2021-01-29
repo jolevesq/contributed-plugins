@@ -354,6 +354,14 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     width: 100%;
     font-size: 24px;
     display: none; }
+  .rv-chart-panel .rv-chart-hidedata-tooltip {
+    display: none;
+    position: absolute;
+    background-color: white;
+    left: 40%;
+    top: 30px;
+    padding: 5px;
+    border: 1px solid black; }
   .rv-chart-panel .rv-chart-loading {
     display: none; }
   .rv-chart-panel .rv-chart-sliderY {
