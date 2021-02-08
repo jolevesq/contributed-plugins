@@ -14,7 +14,6 @@ export declare class SliderBar {
     private _stepType;
     private _rangeType;
     private _interval;
-    private _intervalUnit;
     static _playState: BehaviorSubject<boolean>;
     static getPlayState(): Observable<boolean>;
     private static setPlayState;
