@@ -272,7 +272,6 @@
         },
         "layers": [{
             "id": "0",
-            "nameField": "OBJECTID",
             "data": [{
               "type": "combine",
               "measure": "data1",

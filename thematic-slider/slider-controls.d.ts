@@ -3,7 +3,7 @@ import { SliderPanel } from './slider-panel';
 export declare class SliderControls {
     private _mapApi;
     private _panelControls;
-    get activeControls(): JQuery<HTMLElement>[];
+    readonly activeControls: JQuery<HTMLElement>[];
     /**
      * Controllers constructor
      * @constructor

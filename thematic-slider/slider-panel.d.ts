@@ -23,7 +23,7 @@ export declare class SliderPanel {
     static _end: BehaviorSubject<string>;
     static getLastStep(): Observable<string>;
     private static setLastStep;
-    private get active();
+    private readonly active;
     /**
      * Slider panel constructor
      * @constructor

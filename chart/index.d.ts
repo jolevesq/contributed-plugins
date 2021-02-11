@@ -15,16 +15,9 @@ export default class Chart {
     * @function findDetailsconfig
     * @param {String} id the layer id for this feature
     * @param {Object[]} layersConfig the chart layers configuration array
-    * @param {Any} feature the feature to use for details panel values
+    * @returns {Object} the details panel values
     */
-    findDetailsconfig(id: string, layersConfig: object[], feature: any): void;
-    /**
-     * Compile template to link controller and html
-     * @function compileTemplate
-     * @param {String} template measure control
-     * @return {JQuery<HTMLElement>} temp compile template
-     */
-    private compileTemplate;
+    findDetailsconfig(id: string, layersConfig: object[]): object;
 }
 export default interface Chart {
     _RV: any;

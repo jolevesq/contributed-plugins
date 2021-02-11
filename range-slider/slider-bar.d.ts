@@ -14,6 +14,7 @@ export declare class SliderBar {
     private _stepType;
     private _rangeType;
     private _interval;
+    private _intervalUnit;
     static _playState: BehaviorSubject<boolean>;
     static getPlayState(): Observable<boolean>;
     private static setPlayState;
@@ -57,77 +58,70 @@ export declare class SliderBar {
      * Set slider range
      * @property range
      */
-    set range(value: Range);
     /**
-     * Get slider range
-     * @property range
-     */
-    get range(): Range;
+    * Get slider range
+    * @property range
+    */
+    range: Range;
     /**
      * Set slider limit (dynamic)
      * @property limit
      */
-    set limit(value: Range);
     /**
-     * Get slider limit (dynamic)
-     * @property limit
-     */
-    get limit(): Range;
+    * Get slider limit (dynamic)
+    * @property limit
+    */
+    limit: Range;
     /**
      * Set slider limit (static)
      * @property limit
      */
-    set limits(value: number[]);
     /**
-     * Get slider limit (static)
-     * @property limit
-     */
-    get limits(): number[];
+    * Get slider limit (static)
+    * @property limit
+    */
+    limits: number[];
     /**
      * Set slider lock
      * @property lock
      */
-    set lock(lock: boolean);
     /**
-     * Get slider lock
-     * @property lock
-     */
-    get lock(): boolean;
+    * Get slider lock
+    * @property lock
+    */
+    lock: boolean;
     /**
      * Get slider range type is dual
      * @property lock
      */
-    get dual(): boolean;
+    readonly dual: boolean;
     /**
      * Set slider loop
      * @property loop
      */
-    set loop(loop: boolean);
     /**
-     * Get slider loop
-     * @property loop
-     */
-    get loop(): boolean;
+    * Get slider loop
+    * @property loop
+    */
+    loop: boolean;
     /**
      * Set slider delay
      * @property delay
      */
-    set delay(delay: number);
     /**
-     * Get slider delay
-     * @property delay
-     */
-    get delay(): number;
+    * Get slider delay
+    * @property delay
+    */
+    delay: number;
     /**
      * Set slider export
      * @property export
      */
-    set export(exp: boolean);
     /**
-     * Get slider export
-     * @property export
-     */
-    get export(): boolean;
+    * Get slider export
+    * @property export
+    */
+    export: boolean;
     /**
      * Set play or pause on the slider
      * @function play
