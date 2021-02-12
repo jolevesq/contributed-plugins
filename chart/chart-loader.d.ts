@@ -1,9 +1,10 @@
 /**
  * Creates and manages charts.
+ * @exports
+ * @class ChartLoader
  */
 export declare class ChartLoader {
     private _chart;
-    private _config;
     private _mapApi;
     private _panel;
     private _sliderX;
@@ -20,9 +21,8 @@ export declare class ChartLoader {
      * Chart loader constructor
      * @constructor
      * @param {Any} mapApi the viewer api
-     * @param {Any} config the slider configuration
      */
-    constructor(mapApi: any, config: any);
+    constructor(mapApi: any);
     /**
      * Initialize the slider
      * @function initSlider
@@ -30,53 +30,78 @@ export declare class ChartLoader {
      * @param {Number} min minimum value for slider
      * @param {Number} max maximum value for slider
      * @param {String} xType the x axis type, date or linear
+     * @param {String} language the viewer language
      */
-    initSlider(slider: any, min: number, max: number, type: string): void;
+    initSlider(slider: any, min: number, max: number, type: string, language: string): void;
     /**
-     * Parse the graph pips labels value
+     * Set pips (slider labels) format
+     * @function formatPips
+     * @param {Any} value the value to display (number, string or date)
+     * @param {String} lang the language to use
+     * @return {any} value the formated value
+     */
+    formatPips(value: any, type: any, lang: string): any;
+    /**
+     * Format tooltips
+     * @function setTooltips
+     * @param {string} type type of tooltips (will be pass to format pips function)
+     * @param {string} language the viewer language
+     * @return {Object[]} tooltips as an array of tooltip object
+     */
+    setTooltips(type: string, language: string): object[];
+    /**
+     * Parse the graph pips labels value and set slider range
      * @function parsePips
      * @param {String} axis axis to parse labels for (x or y)
      * @param {Date} type the type of axis (linear or date)
      * @param {Any} min min range to parse the value
      * @param {Any} max max range to parse the value
      */
-    parsePips(axis: string, type: string, min: any, max: any): void;
+    setSliderRanges(axis: string, type: string, min: any, max: any): void;
     /**
      * Parse the graph value with the range from the slider
-     * @function parseRange
+     * @function parseDatasetsRange
      * @param {Any} xRange x range values to filter
      * @param {Any} yRange y range values to filter
      * @param {Any} data data to filter
      */
-    parseRange(xRange: any, yRange: any, data: any): object[];
+    parseDatasetsRange(xRange: any, yRange: any, data: any): object[];
+    /**
+     * Destroy the slider and chart
+     * @function destroy
+     */
+    destroy(): void;
     /**
      * Destroy the slider
      * @function destroySlider
      */
-    destroySlider(): void;
+    private destroySlider;
     /**
      * Destroy the chart
      * @function destroyChart
      */
-    destroyChart(): void;
+    private destroyChart;
     /**
      * Create pie chart
      * @function createPieChart
      * @param {Object} attrs attributes to use for the graph
+     * @param {Any} config the configuration for the chart
      */
-    createPieChart(attrs: object): void;
+    createPieChart(attrs: object, config: any): void;
     /**
      * Create bar chart
      * @function createBarChart
      * @param {Object} attrs attributes to use for the graph
+     * @param {Any} config the configuration for the chart
      */
-    createBarChart(attrs: object): void;
+    createBarChart(attrs: object, config: any): void;
     /**
      * Create line chart
      * @function createLineChart
      * @param {Object} attrs attributes to use for the graph
+     * @param {Any} config the configuration for the chart
      */
-    createLineChart(attrs: object): void;
+    createLineChart(attrs: object, config: any): void;
     /**
      * Draw the chart
      * @function draw
@@ -88,7 +113,7 @@ export declare class ChartLoader {
      * @function getGlobalOptions
      * @return {Object} the global options
      */
-    getGlobalOptions(): object;
+    private getGlobalOptions;
     /**
      * Parse feature datasets
      * @function parse

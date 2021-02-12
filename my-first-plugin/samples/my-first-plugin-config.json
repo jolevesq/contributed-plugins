@@ -21,7 +21,7 @@
         "reorderable": false
       }
     },
-    "version": "3.2.0",
+    "version": "2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -85,37 +85,22 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": []
+          "children": [
+          ]
         }
       },
       "layers": [
         {
           "id": "0",
-          "name": "Graphics",
+          "name": "Power Plant 100MW or more (hydro)",
           "layerType": "esriFeature",
-          "fileType": "geojson",
-          "url": "https://raw.githubusercontent.com/fgpv-vpgf/contributed-plugins/master/chart/src/samples/geoJSON/pieChart.json"
+          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/20"
         },
         {
           "id": "1",
-          "name": "Graphics Double",
+          "name": "Power Plant 100MW or more (petroleum)",
           "layerType": "esriFeature",
-          "fileType": "geojson",
-          "url": "https://raw.githubusercontent.com/fgpv-vpgf/contributed-plugins/master/chart/src/samples/geoJSON/pieChart.json"
-        },
-        {
-          "id": "2",
-          "name": "Graphics Second",
-          "layerType": "esriFeature",
-          "fileType": "geojson",
-          "url": "https://raw.githubusercontent.com/fgpv-vpgf/contributed-plugins/master/chart/src/samples/geoJSON/pieChart-second.json"
-        },
-        {
-          "id": "3",
-          "name": "Graphics Unused",
-          "layerType": "esriFeature",
-          "fileType": "geojson",
-          "url": "https://raw.githubusercontent.com/fgpv-vpgf/contributed-plugins/master/chart/src/samples/geoJSON/pieChart-unused.json"
+          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/24"
         }
       ],
       "extentSets": [
@@ -270,59 +255,8 @@
       ]
     },
     "plugins": {
-      "chart": {
-        "type": "pie",
-        "title": "My Custom Tilte",
-        "labelsPie": {
-          "type": "config",
-          "values": "lbl 1;lbl 2;lbl 3;lbl 4;lbl 5;lbl 6; lbl 7",
-          "split": ";"
-        },
-        "options": {
-          "colors": "#aaffc3;#808000;#ffd8b1;#000075;#e6194b;#3cb44b;#ffe119",
-          "cutOut": 0
-        },
-        "layers": [{
-            "id": "0",
-            "nameField": "OBJECTID",
-            "data": [{
-              "type": "single",
-              "measure": "data",
-              "label": {
-                "type": "config",
-                "values": "",
-                "split": ";"
-              },
-              "regex": "",
-              "split": ";",
-              "prefix": "Custom",
-              "suffix": "Color"
-            }],
-            "details": {
-              "enabled": true,
-              "value": "## What a nice pie chart\n**Useful data listed below**\n * Label field value: {{label}}\n * Data: {{data}}\n\n\n![sd-logo](https://raw.githubusercontent.com/showdownjs/logo/master/dist/logo.readme.png 'sd logo')\n\n[Get Showdown!](https://github.com/showdownjs/showdown)"
-            }
-        }, {
-            "id": "2",
-            "nameField": "OBJECTID",
-            "data": [{
-              "type": "single",
-              "measure": "data",
-              "label": {
-                "type": "config",
-                "values": "",
-                "split": ";"
-              },
-              "regex": "",
-              "split": ";",
-              "prefix": "Custom Second",
-              "suffix": "Color Second"
-            }],
-            "details": {
-              "enabled": false,
-              "value": ""
-            }
-        }]
+      "myFirstPlugin": {
+        "description": "This is my first plugin description"
       }
     }
   }

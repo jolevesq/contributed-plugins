@@ -1,5 +1,7 @@
 /**
  * Creates bar charts.
+ * @exports
+ * @class ChartBar
  */
 export declare class ChartBar {
     /**

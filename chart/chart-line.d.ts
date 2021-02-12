@@ -1,5 +1,8 @@
+import 'chartjs-adapter-date-fns';
 /**
  * Creates line charts.
+ * @exports
+ * @class ChartLine
  */
 export declare class ChartLine {
     private _data;
@@ -10,19 +13,19 @@ export declare class ChartLine {
      * @property datasets
      * @return {Object} original datasets (not filtered one)
      */
-    readonly datasets: object[];
+    get datasets(): object[];
     /**
      * Get range for x axis
      * @property rangeX
      * @return {Object} the min and max values for the datasets x axis
      */
-    readonly rangeX: any;
+    get rangeX(): any;
     /**
      * Get range for y axis
      * @property rangeY
      * @return {Object} the min and max values for the datasets y axis
      */
-    readonly rangeY: any;
+    get rangeY(): any;
     /**
      * Chart bar constructor
      * @constructor
@@ -63,5 +66,6 @@ export interface ChartLine {
     type: string;
     data: any;
     title: string;
+    language: string;
     ranges: any;
 }

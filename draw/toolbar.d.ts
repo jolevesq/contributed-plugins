@@ -41,24 +41,25 @@ export declare class DrawToolbar {
      * @property localWCAG
      * @returns {Object} the WCAG tooltip to use
      */
-    readonly localWCAG: object;
+    get localWCAG(): object;
     /**
      * get local mouse tooltip
      * @property localMouse
      * @returns {Object} the mouse tooltip to use
      */
-    readonly localMouse: object;
+    get localMouse(): object;
     /**
      * set local tooltip for draw toolbar
      * @property local
      * @param {Object} value the tooltip to use
      */
+    set local(value: object);
     /**
-    * get local WCAG tooltip
-    * @property local
-    * @returns {Object} the WCAG tooltip to use
-    */
-    local: object;
+     * get local WCAG tooltip
+     * @property local
+     * @returns {Object} the WCAG tooltip to use
+     */
+    get local(): object;
     /**
      * Toolbar constructor
      * @constructor
@@ -77,62 +78,67 @@ export declare class DrawToolbar {
      * @property activeTool
      * @return {string} active tool name
      */
+    get activeTool(): string;
     /**
-    * set active tool
-    * @property activeTool
-    * @param {string} value tool name
-    */
-    activeTool: string;
+     * set active tool
+     * @property activeTool
+     * @param {string} value tool name
+     */
+    set activeTool(value: string);
     /**
      * get active color
      * @property activeColor
      * @return {Number[]} active color
      */
+    get activeColor(): number[];
     /**
-    * set active color
-    * @property activeColor
-    * @param {Number[]} value active color
-    */
-    activeColor: number[];
+     * set active color
+     * @property activeColor
+     * @param {Number[]} value active color
+     */
+    set activeColor(value: number[]);
     /**
      * get geometry length
      * @property geometryLength
      * @return {number} geometry length
      */
+    get geometryLength(): number;
     /**
-    * set geometry length
-    * @property geometryLength
-    * @param {number} value geometry length
-    */
-    geometryLength: number;
+     * set geometry length
+     * @property geometryLength
+     * @param {number} value geometry length
+     */
+    set geometryLength(value: number);
     /**
      * get geometry points
      * @property mapPoints
      * @return {Object} geometry length
      */
+    get mapPoints(): object[];
     /**
-    * set geometry points
-    * @property mapPoints
-    * @param {Object[]} value geometry length
-    */
-    mapPoints: object[];
+     * set geometry points
+     * @property mapPoints
+     * @param {Object[]} value geometry length
+     */
+    set mapPoints(value: object[]);
     /**
      * get graphic key
      * @property graphicKey
      * @return {String} graphic key
      */
+    get graphicKey(): string;
     /**
-    * set graphic key
-    * @property graphicKey
-    * @param {String} value graphic key
-    */
-    graphicKey: string;
+     * set graphic key
+     * @property graphicKey
+     * @param {String} value graphic key
+     */
+    set graphicKey(value: string);
     /**
      * get graphic layer
      * @property graphicsLayer
      * @return {Any} graphic layer
      */
-    readonly graphicsLayer: any;
+    get graphicsLayer(): any;
     /**
      * Import graphics file to graphiclayer
      * @function importGraphics

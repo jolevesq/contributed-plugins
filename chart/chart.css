@@ -339,17 +339,39 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   padding: 1px 4px;
   display: none; }
 
+#chart .rv-header-content {
+  display: contents; }
+
 .rv-chart-panel {
   height: 100%;
   overflow: hidden;
   display: flex;
   padding: 0 10px; }
+  .rv-chart-panel .rv-chart-nodata {
+    text-align: center;
+    top: 50%;
+    position: absolute;
+    width: 100%;
+    font-size: 24px;
+    display: none; }
+  .rv-chart-panel .rv-chart-hidedata-tooltip {
+    display: none;
+    position: absolute;
+    background-color: white;
+    left: 40%;
+    top: 30px;
+    padding: 5px;
+    border: 1px solid black; }
+  .rv-chart-panel .rv-chart-loading {
+    display: none; }
   .rv-chart-panel .rv-chart-sliderY {
-    padding-right: 50px;
-    display: flex; }
+    display: flex;
+    height: 80%;
+    padding-right: 100px; }
     .rv-chart-panel .rv-chart-sliderY #nouisliderY {
-      height: 60%;
-      align-self: center; }
+      height: inherit;
+      align-self: center;
+      margin: 0 auto; }
   .rv-chart-panel .rv-chart-canvas {
     height: 100% !important;
     display: flex;
@@ -365,3 +387,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   padding: 8px 16px; }
   .rv-chart-details-value body {
     background-color: #FFF; }
+
+.rv-chart-select {
+  padding: 0 30px;
+  width: 200px; }
