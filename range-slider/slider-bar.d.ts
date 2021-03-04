@@ -109,6 +109,16 @@ export declare class SliderBar {
      */
     get loop(): boolean;
     /**
+     * Set slider reverse
+     * @property reverse
+     */
+    set reverse(reverse: boolean);
+    /**
+     * Get slider reverse
+     * @property reverse
+     */
+    get reverse(): boolean;
+    /**
      * Set slider delay
      * @property delay
      */
@@ -137,9 +147,10 @@ export declare class SliderBar {
     /**
      * Loop play until the max limit is reach
      * @function playInstant
+     * @param {Number} limitmin the min limit
      * @param {Number} limitmax the max limit
      */
-    playInstant(limitmax: number): void;
+    playInstant(limitmin: number, limitmax: number): void;
     /**
      * Check if we need to take snapshot to export GIF
      * @function setTakeSnapShot
