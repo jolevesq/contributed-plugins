@@ -139,6 +139,26 @@ export declare class SliderBar {
      */
     get export(): boolean;
     /**
+     * Set slider maximize state
+     * @property maximize
+     */
+    set maximize(maximize: boolean);
+    /**
+     * Get slider maximize state
+     * @property maximize
+     */
+    get maximize(): boolean;
+    /**
+     * Set slider description state
+     * @property maximizeDesc
+     */
+    set maximizeDesc(maximizeDesc: boolean);
+    /**
+     * Get slider description state
+     * @property maximizeDesc
+     */
+    get maximizeDesc(): boolean;
+    /**
      * Set play or pause on the slider
      * @function play
      * @param {Boolean} play true if slider is playing, false otherwise

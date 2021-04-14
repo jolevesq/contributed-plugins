@@ -311,8 +311,10 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   top: 4px;
   left: 12px; }
 
-.noUi-handle:focus .noUi-tooltip {
-  display: block; }
+.noUi-handle {
+  background-color: #c0c0c0; }
+  .noUi-handle:focus .noUi-tooltip {
+    display: block; }
 
 .noUi-tooltip {
   padding: 1px 4px;
@@ -380,13 +382,13 @@ input:focus + .noUi-tooltip {
   #rangeSlider .panel-body {
     height: auto; }
 
-#rangeSlider:hover {
+#rangeSlider:hover, #rangeSlider:focus-within {
   opacity: 1; }
 
 .rv-rangeslider {
   display: flex;
   flex-direction: row;
-  padding: 10px; }
+  padding: 5px 10px; }
   .rv-rangeslider .slider-content {
     overflow: hidden;
     width: 100%;
@@ -408,7 +410,7 @@ input:focus + .noUi-tooltip {
       display: flex;
       flex-direction: column;
       width: 100%;
-      padding: 10px 35px; }
+      padding: 5px 35px; }
       .rv-rangeslider .slider-content .slider-bar .slider-bar-noui {
         width: 100%;
         height: 50px; }
@@ -439,6 +441,9 @@ input:focus + .noUi-tooltip {
       .rv-rangeslider .slider-content .slider-bar .slider-widget {
         width: 93%; }
       .rv-rangeslider .slider-content .slider-bar .slider-units {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
         right: 40px;
         position: absolute;
         color: #999;
@@ -448,6 +453,8 @@ input:focus + .noUi-tooltip {
         width: 5%;
         top: 15px; }
   .rv-rangeslider .slider-desc {
-    color: #999; }
+    color: #999;
+    overflow: auto;
+    height: 60px; }
     .rv-rangeslider .slider-desc span {
       display: block; }

@@ -8,6 +8,7 @@ export declare class SliderManager {
     private _myBundle;
     private _slider;
     private _attRead;
+    private _button;
     /**
     * Slider manager constructor
     * @constructor
@@ -17,6 +18,16 @@ export declare class SliderManager {
     * @param {Any} myBundle the esri dependencies bundle
     */
     constructor(mapApi: any, panel: any, config: any, myBundle: any);
+    /**
+     * Create the menu button once slider is initialized
+     */
+    createButtonMenu(): void;
+    /**
+     * Event to fire on side menu item click. Open/Close the panel
+     * @function onMenuItemClick
+     * @return {function} the function to run
+     */
+    onMenuItemClick(): () => void;
     /**
      * Initialize slider creation when all layers are loaded
      * @function initializeSlider
