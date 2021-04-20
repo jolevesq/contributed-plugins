@@ -21,7 +21,7 @@
         "reorderable": false
       }
     },
-    "version": "2.0",
+    "version": "3.2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -85,38 +85,16 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": [
-            {
-              "name": "A Group with a hidden layer",
-              "expanded": true,
-              "children": [
-                {
-                  "layerId": "0",
-                  "hidden": true
-                },
-                {
-                  "layerId": "powerplant100mw-naturalGas"
-                }
-              ]
-            },
-            {
-              "layerId": "GeoChron"
-            }
-          ]
+          "children": []
         }
       },
       "layers": [
         {
           "id": "0",
-          "name": "Hydroelectric",
+          "name": "Graphics",
           "layerType": "esriFeature",
-          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/20"
-        },
-        {
-          "id": "1",
-          "name": "Natural Gas",
-          "layerType": "esriFeature",
-          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/21"
+          "fileType": "geojson",
+          "url": "https://raw.githubusercontent.com/fgpv-vpgf/contributed-plugins/master/chart/src/samples/geoJSON/barChart.json"
         }
       ],
       "extentSets": [
@@ -271,26 +249,47 @@
       ]
     },
     "plugins": {
-      "rangeSlider": {
-        "open": false,
-        "autorun": false,
-        "loop": false,
-        "controls": ["lock", "delay", "refresh"],
-        "params": {
-          "delay": 3000,
-          "rangeType": "dual",
-          "stepType": "dynamic",
-          "range": { "min": 1400, "max": 1900 },
-          "type": "number",
-          "units": "Total MW",
-          "description": ""
+      "chart": {
+        "type": "bar",
+        "title": "My Custom Tilte",
+        "axis": {
+          "xAxis": {
+            "type": "field",
+            "title": "My categories",
+            "values": "label",
+            "split": ";"
+          },
+          "yAxis": {
+            "type": "linear",
+            "title": "My values",
+            "values": "",
+            "split": ""
+          }
+        },
+        "options": {
+          "colors": "",
+          "cutOut": 0
         },
         "layers": [{
-          "id": "0",
-          "field": "Total_MW"
-        }, {
-          "id": "1",
-          "field": "Total_MW"
+            "id": "0",
+            "nameField": "OBJECTID",
+            "data": [{
+              "type": "single",
+              "measure": "data",
+              "label": {
+                "type": "field",
+                "values": "label",
+                "split": ";"
+              },
+              "regex": "\\[|\\];\\[|\\]",
+              "split": ";",
+              "prefix": "Custom",
+              "suffix": "Color"
+            }],
+            "details": {
+              "enabled": false,
+              "value": ""
+            }
         }]
       }
     }

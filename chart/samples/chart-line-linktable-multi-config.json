@@ -21,7 +21,7 @@
         "reorderable": false
       }
     },
-    "version": "2.0",
+    "version": "3.2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -85,32 +85,19 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": [
-            {
-              "name": "A Group with a hidden layer",
-              "expanded": true,
-              "children": [
-                {
-                  "layerId": "0",
-                  "hidden": true
-                },
-                {
-                  "layerId": "powerplant100mw-naturalGas"
-                }
-              ]
-            },
-            {
-              "layerId": "GeoChron"
-            }
-          ]
+          "children": []
         }
       },
       "layers": [
         {
-          "id": "1",
-          "name": "Natural Gas",
-          "layerType": "esriFeature",
-          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/21"
+          "id": "0",
+          "name": "Water Quality",
+          "layerType": "esriDynamic",
+          "url": "https://maps-stage.services.geo.ca/server_serveur/rest/services/NRCAN/Water_Quality_Test2/MapServer",
+          "layerEntries": [{
+            "index": 0,
+            "name": "Points"
+          }]
         }
       ],
       "extentSets": [
@@ -265,26 +252,54 @@
       ]
     },
     "plugins": {
-      "rangeSlider": {
-        "open": true,
-        "autorun": false,
-        "loop": false,
-        "controls": ["lock", "reverse", "refresh", "loop"],
-        "params": {
-          "delay": 3000,
-          "type": "number",
-          "rangeType": "single",
-          "stepType": "static",
-          "interval": 50,
-          "intervalUnit": "",
-          "range": { "min": 441, "max": null },
-          "limit": { "min": 200, "max": 2095, "staticItems": [441, 610, 933, 1352, 1674, 1905, 1962] },
-          "units": "",
-          "description": ""
+      "chart": {
+        "type": "line",
+        "title": "Water Quality",
+        "axis": {
+          "xAxis": {
+            "type": "date",
+            "title": "Dates",
+            "values": "",
+            "split": ""
+          },
+          "yAxis": {
+            "type": "linear",
+            "title": "MG / L",
+            "values": "",
+            "split": ""
+          }
+        },
+        "options": {
+          "colors": "",
+          "cutOut": 0
         },
         "layers": [{
-          "id": "1",
-          "field": "OBJECTID"
+            "id": "0",
+            "nameField": "Site_number",
+            "type": "link",
+            "linkUrl": "https://maps-stage.services.geo.ca/server_serveur/rest/services/NRCAN/Water_Quality_Test2/MapServer/1",
+            "linkField": "Site_number",
+            "data": [{
+                "type": "combine",
+                "linkType": "multi",
+                "link": "Site_number",
+                "measure": "VALUE_VALEUR",
+                "values": "VARIABLE_NAME",
+                "date": "DATE",
+                "label": {
+                  "type": "config",
+                  "values": "",
+                  "split": ""
+                },
+                "regex": "\\(|\\),\\(|\\)",
+                "split": ",",
+                "prefix": "",
+                "suffix": "MG/L"
+            }],
+            "details": {
+              "enabled": false,
+              "value": ""
+            }
         }]
       }
     }

@@ -14,14 +14,14 @@
       },
       "legend": {
         "isOpen": {
-          "large": true,
-          "medium": true,
-          "small": true
+          "large": false,
+          "medium": false,
+          "small": false
         },
         "reorderable": false
       }
     },
-    "version": "2.0",
+    "version": "3.2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -82,21 +82,20 @@
         }
       },
       "legend": {
-        "type": "structured",
+        "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": [{
-            "infoType": "text",
-            "content": "Feature Layer url: https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/ks_earthquakes_since_2000/FeatureServer/0",
-            "export": "false"
-          }, {
-            "infoType": "text",
-            "content": "Dynamic Layer url: https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/ks_earthquakes_since_2000/FeatureServer/",
-            "export": "false"
-          }]
+          "children": []
         }
       },
-      "layers": [],
+      "layers": [
+        {
+          "id": "0",
+          "name": "Graphics",
+          "layerType": "esriFeature",
+          "url": "https://webservices.maps.canada.ca/arcgis/rest/services/Test_FGP/test_data/MapServer/0"
+        }
+      ],
       "extentSets": [
         {
           "id": "EXT_NRCAN_Lambert_3978",
@@ -248,5 +247,61 @@
         }
       ]
     },
-    "plugins": {}
+    "plugins": {
+      "chart": {
+        "type": "line",
+        "title": "my chart",
+        "axis": {
+          "xAxis": {
+            "type": "date",
+            "title": "Dates",
+            "values": "",
+            "split": ""
+          },
+          "yAxis": {
+            "type": "linear",
+            "title": "My values",
+            "values": "",
+            "split": ""
+          }
+        },
+        "options": {
+          "colors": "",
+          "cutOut": 0
+        },
+        "layers": [{
+            "id": "0",
+            "nameField": "Location_Emplacement",
+            "data": [{
+              "type": "combine",
+              "measure": "measure2_data",
+              "label": {
+                "type": "field",
+                "values": "measure2_name",
+                "split": ""
+              },
+              "regex": "\\(|\\),\\(|\\)",
+              "split": ",",
+              "prefix": "",
+              "suffix": "mBq / m3"
+            }, {
+              "type": "combine",
+              "measure": "measure3_data",
+              "label": {
+                "type": "field",
+                "values": "measure3_name",
+                "split": ""
+              },
+              "regex": "\\(|\\),\\(|\\)",
+              "split": ",",
+              "prefix": "",
+              "suffix": "mBq / m3"
+            }],
+            "details": {
+              "enabled": false,
+              "value": ""
+            }
+        }]
+      }
+    }
   }

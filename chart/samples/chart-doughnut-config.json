@@ -21,7 +21,7 @@
         "reorderable": false
       }
     },
-    "version": "2.0",
+    "version": "3.2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -85,61 +85,17 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": [
-          ]
+          "children": []
         }
       },
       "layers": [
         {
-          "id": "powerplant100mw-naturalGas",
-          "name": "Natural Gas Pipeline",
+          "id": "0",
+          "name": "Graphics",
           "layerType": "esriFeature",
-          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/2"
-        },
-        {
-          "layerType": "ogcWms",
-          "colour": "#ff0000",
-          "toggleSymbology": true,
-          "refreshInterval": 0,
-          "expectedResponseTime": 4000,
-          "tolerance": 5,
-          "imageFormat": "png32",
-          "singleEntryCollapse": false,
-          "suppressGetCapabilities": true,
-          "state": {
-              "opacity": 1,
-              "visibility": true,
-              "boundingBox": false,
-              "query": true,
-              "snapshot": false,
-              "hovertips": true
-          },
-          "layerEntries": [
-              {
-                  "outfields": "*",
-                  "stateOnly": false,
-                  "state": {
-                      "opacity": 1,
-                      "visibility": true,
-                      "boundingBox": false,
-                      "query": true,
-                      "snapshot": false,
-                      "hovertips": true
-                  },
-                  "allStyles": [
-                      "default"
-                  ],
-                  "init": true,
-                  "id": "0",
-                  "name": "Sample",
-                  "currentStyle": "default"
-              }
-          ],
-          "name": "wms",
-          "id": "wms",
-          "url": "https://webservices.maps.canada.ca/arcgis/services/ELECTIONS/elections_canada_2019_en/MapServer/WMSServer",
-          "legendMimeType": "image/png"
-      }
+          "fileType": "geojson",
+          "url": "https://raw.githubusercontent.com/fgpv-vpgf/contributed-plugins/master/chart/src/samples/geoJSON/doughnutChart.json"
+        }
       ],
       "extentSets": [
         {
@@ -293,27 +249,38 @@
       ]
     },
     "plugins": {
-      "rangeSlider": {
-        "open": true,
-        "maximize": false,
-        "maximizeDesc": false,
-        "autorun": false,
-        "loop": false,
-        "controls": ["lock", "loop", "delay", "refresh", "reverse"],
-        "params": {
-          "delay": 3000,
-          "type": "number",
-          "rangeType": "dual",
-          "stepType": "dynamic",
-          "precision": 0,
-          "range": { "min": 0, "max": 1000 },
-          "limit": { "min": 0, "max": 10000 },
-          "units": "",
-          "description": ""
+      "chart": {
+        "type": "pie",
+        "title": "My Custom Tilte",
+        "labelsPie": {
+          "type": "field",
+          "values": "label",
+          "split": ";"
+        },
+        "options": {
+          "colors": "",
+          "cutOut": 20
         },
         "layers": [{
-            "id": "wms",
-            "field": "OBJECTID"
+            "id": "0",
+            "nameField": "OBJECTID",
+            "data": [{
+              "type": "single",
+              "measure": "data",
+              "label": {
+                "type": "config",
+                "values": "",
+                "split": ";"
+              },
+              "regex": "\\[|\\];\\[|\\]",
+              "split": ";",
+              "prefix": "Custom",
+              "suffix": "Color"
+            }],
+            "details": {
+              "enabled": false,
+              "value": ""
+            }
         }]
       }
     }

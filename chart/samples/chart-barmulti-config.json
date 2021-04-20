@@ -21,7 +21,7 @@
         "reorderable": false
       }
     },
-    "version": "2.0",
+    "version": "3.2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -85,38 +85,16 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": [
-            {
-              "name": "A Group with a hidden layer",
-              "expanded": true,
-              "children": [
-                {
-                  "layerId": "0",
-                  "hidden": true
-                },
-                {
-                  "layerId": "powerplant100mw-naturalGas"
-                }
-              ]
-            },
-            {
-              "layerId": "GeoChron"
-            }
-          ]
+          "children": []
         }
       },
       "layers": [
         {
           "id": "0",
-          "name": "Active flood - EMPTY",
+          "name": "Graphics",
           "layerType": "esriFeature",
-          "url": "https://maps-cartes.services.geo.ca/egs_sgu/rest/services/Flood_Inondation/EGS_Flood_Product_Active_en/MapServer/0"
-        },
-        {
-          "id": "1",
-          "name": "Current flood",
-          "layerType": "esriFeature",
-          "url": "https://maps-cartes.services.geo.ca/egs_sgu/rest/services/Flood_Inondation/EGS_Flood_Product_Current_en/MapServer/0"
+          "fileType": "geojson",
+          "url": "https://raw.githubusercontent.com/fgpv-vpgf/contributed-plugins/master/chart/src/samples/geoJSON/barChartMulti.json"
         }
       ],
       "extentSets": [
@@ -271,30 +249,59 @@
       ]
     },
     "plugins": {
-      "rangeSlider": {
-        "open": true,
-        "autorun": false,
-        "loop": false,
-        "controls": ["lock", "loop", "refresh", "reverse"],
-        "params": {
-          "delay": 3000,
-          "type": "date",
-          "rangeType": "dual",
-          "stepType": "dynamic",
-          "precision": "date",
-          "interval": -1,
-          "range": { "min": 1617163200000, "max": 1619841600000 },
-          "limit": { "min": 1577854800000, "max": 1619841600000 },
-          "limits": [],
-          "units": "",
-          "description": "Let see current and active flood from January 2020 to May 2021."
+      "chart": {
+        "type": "bar",
+        "title": "My Custom Tilte",
+        "axis": {
+          "xAxis": {
+            "type": "config",
+            "title": "My categories",
+            "values": "label 1;label 2;label 3;label 4;label 5",
+            "split": ";"
+          },
+          "yAxis": {
+            "type": "linear",
+            "title": "My values",
+            "values": "",
+            "split": ""
+          }
+        },
+        "options": {
+          "colors": "#aaffc3;#808000;#ffd8b1;#000075;#e6194b;#3cb44b;#ffe119",
+          "cutOut": 0
         },
         "layers": [{
-          "id": "0",
-          "field": "date_utc"
-        }, {
-          "id": "1",
-          "field": "date_utc"
+            "id": "0",
+            "nameField": "OBJECTID",
+            "data": [{
+              "type": "single",
+              "measure": "data1",
+              "label": {
+                "type": "config",
+                "values": "data 1",
+                "split": ""
+              },
+              "regex": "",
+              "split": ";",
+              "prefix": "Custom data 1",
+              "suffix": "Color(1)"
+            }, {
+              "type": "single",
+              "measure": "data2",
+              "label": {
+                "type": "config",
+                "values": "data 2",
+                "split": ""
+              },
+              "regex": "\\[|\\];\\[|\\]",
+              "split": ";",
+              "prefix": "Custom data 2",
+              "suffix": "Color(2)"
+            }],
+            "details": {
+              "enabled": false,
+              "value": ""
+            }
         }]
       }
     }
