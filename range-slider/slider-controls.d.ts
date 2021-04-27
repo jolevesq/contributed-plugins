@@ -1,5 +1,9 @@
 /// <reference types="jquery" />
 import { SliderBar } from './slider-bar';
+export interface SliderControls {
+    mapApi: any;
+    descVisible: boolean;
+}
 export declare class SliderControls {
     /**
      * Slider controls constructor
@@ -17,7 +21,4 @@ export declare class SliderControls {
      * @return {JQuery<HTMLElement>} temp compile template
      */
     compileTemplate(template: string): JQuery<HTMLElement>;
-}
-export interface SliderControls {
-    mapApi: any;
 }
