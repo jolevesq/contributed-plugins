@@ -1,3 +1,12 @@
+interface Layer {
+    layer: any;
+    layerInfo: LayerInfo;
+}
+interface LayerInfo {
+    id: string;
+    field: string;
+    isTimeAware: boolean;
+}
 /**
  * Manage slider panel and bar creation.
  */
@@ -9,6 +18,7 @@ export declare class SliderManager {
     private _slider;
     private _attRead;
     private _button;
+    private _xmlParser;
     /**
     * Slider manager constructor
     * @constructor
@@ -18,14 +28,35 @@ export declare class SliderManager {
     * @param {Any} myBundle the esri dependencies bundle
     */
     constructor(mapApi: any, panel: any, config: any, myBundle: any);
+    setupConfiguredLayer(layers: any[]): void;
+    setupLimits(layers: Layer[]): void;
+    settNotTimeAwareLimits(item: Layer): Promise<any>;
+    setTimeESRILimits(item: Layer): Promise<unknown>;
+    setTimeWMSLimits(item: Layer): Promise<unknown>;
+    getDimensionsWMS(ids: any, layer: any, dimensions: any, dimensionName?: string): any;
+    setDimensionLayerDefinition(layer: any, dimensionName: any): any;
+    processWMSExtent(extent: any): {
+        extent: any[];
+        static: any[];
+        interval: any;
+    };
+    isDiscreteExtent(strExtent: string): any;
+    sortNumbersAsc(a: any, b: any): number;
+    addDuration(dateStart: any, arrDuration: any): any;
+    buildTimeStampsArrayFromInterval(strDateStart: any, strDateEnd: any, strIsoInterval: any): any[];
+    getTimestampsArrayFromExtent(arrExtent: any): any[];
+    getRangeAndLimitFromExtent(arrExtent: any): {
+        limit: any;
+        range: {
+            min: any;
+            max: any;
+        };
+    };
     /**
-     * Launch init for no config layers
-     * @function launchInit
-     * @param {Layer[]} layers array of layers to init
-     * @param {String} name the layer name for description
-     * @param {String} field the field name for description
+     * Initialize slider creation when all layers are loaded
+     * @function initializeSlider
      */
-    launchInit(layers: Layer[], name: string, field: string): void;
+    initializeSlider(): void;
     /**
      * Create the menu button once slider is initialized
      * @function createButtonMenu
@@ -38,28 +69,6 @@ export declare class SliderManager {
      */
     onMenuItemClick(): () => void;
     /**
-     * Initialize slider creation when all layers are loaded
-     * @function initializeSlider
-     * @param {Layer[]} layers the array of layer and layerInfo
-     */
-    initializeSlider(layers: Layer[]): void;
-    /**
-     * Launch the attributesAdded subscription event
-     * @function startAttributesEvent
-     * @param {LayerInfo} layerInfo the info to get the attributes
-     * @param {Number} nbLayers the number of layers to check
-     */
-    startAttributesEvent(layerInfo: LayerInfo, nbLayers: number): void;
-    /**
-     * Set attributes from the resolve event of startAttributesEvent. Wween need to launch
-     * startAttributesEvent for every needed layer
-     * @function setAttributes
-     * @param {AttributePipe} attrPipe the object returned by the attributesAdded event
-     * @param {LayerInfo} layerInfo the info to get the attributes
-     * @param {Number} nbLayers the number of layers to check
-     */
-    setAttributes(attrPipe: AttributePipe, layerInfo: LayerInfo, nbLayers: number): void;
-    /**
      * Set slider bar
      * @function setSliderBar
      */
@@ -70,17 +79,5 @@ export declare class SliderManager {
      * @param {String[]} the array of controls to initialize
      */
     setBarControls(controls: string[]): void;
-}
-interface Layer {
-    layer: any;
-    layerInfo: LayerInfo;
-}
-interface LayerInfo {
-    id: string;
-    field: string;
-}
-interface AttributePipe {
-    layer: any;
-    attributes: object[];
 }
 export {};

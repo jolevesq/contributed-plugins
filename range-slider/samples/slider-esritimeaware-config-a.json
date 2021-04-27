@@ -21,7 +21,7 @@
         "reorderable": false
       }
     },
-    "version": "3.2.0",
+    "version": "2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -85,15 +85,32 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": []
+          "children": [
+            {
+              "name": "A Group with a hidden layer",
+              "expanded": true,
+              "children": [
+                {
+                  "layerId": "0",
+                  "hidden": true
+                },
+                {
+                  "layerId": "powerplant100mw-naturalGas"
+                }
+              ]
+            },
+            {
+              "layerId": "GeoChron"
+            }
+          ]
         }
       },
       "layers": [
         {
           "id": "0",
-          "name": "Graphics",
+          "name": "Subset of U2 performances",
           "layerType": "esriFeature",
-          "url": "https://webservices.maps.canada.ca/arcgis/rest/services/Test_FGP/test_data/MapServer/0"
+          "url": "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/U2/FeatureServer/0"
         }
       ],
       "extentSets": [
@@ -248,59 +265,28 @@
       ]
     },
     "plugins": {
-      "chart": {
-        "type": "line",
-        "title": "my chart",
-        "axis": {
-          "xAxis": {
-            "type": "date",
-            "title": "Dates",
-            "values": "",
-            "split": ""
-          },
-          "yAxis": {
-            "type": "linear",
-            "title": "My values",
-            "values": "",
-            "split": ""
-          }
-        },
-        "options": {
-          "colors": "",
-          "cutOut": 0
+      "rangeSlider": {
+        "open": true,
+        "autorun": false,
+        "loop": false,
+        "controls": ["lock", "loop", "refresh", "reverse"],
+        "params": {
+          "delay": 3000,
+          "type": "date",
+          "rangeType": "dual",
+          "stepType": "dynamic",
+          "precision": "date",
+          "startRangeEnd": true,
+          "range": { "min": null, "max": null },
+          "limit": { "min": null, "max": null },
+          "limits": [],
+          "units": "",
+          "description": "This slider limit and range is set by the time info"
         },
         "layers": [{
-            "id": "0",
-            "nameField": "Location_Emplacement",
-            "data": [{
-              "type": "combine",
-              "measure": "measure2_data",
-              "label": {
-                "type": "field",
-                "values": "measure2_name",
-                "split": ""
-              },
-              "regex": "\\(|\\),\\(|\\)",
-              "split": ",",
-              "prefix": "",
-              "suffix": "mBq / m3"
-            }, {
-              "type": "combine",
-              "measure": "measure3_data",
-              "label": {
-                "type": "field",
-                "values": "measure3_name",
-                "split": ""
-              },
-              "regex": "\\(|\\),\\(|\\)",
-              "split": ",",
-              "prefix": "",
-              "suffix": "mBq / m3"
-            }],
-            "details": {
-              "enabled": false,
-              "value": ""
-            }
+          "id": "0",
+          "field": "Date",
+          "isTimeAware": true
         }]
       }
     }

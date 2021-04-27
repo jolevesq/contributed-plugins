@@ -21,7 +21,7 @@
         "reorderable": false
       }
     },
-    "version": "3.2.0",
+    "version": "2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -85,19 +85,47 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": []
+          "children": [
+            {
+              "name": "A Group with a hidden layer",
+              "expanded": true,
+              "children": [
+                {
+                  "layerId": "0",
+                  "hidden": true
+                },
+                {
+                  "layerId": "powerplant100mw-naturalGas"
+                }
+              ]
+            },
+            {
+              "layerId": "GeoChron"
+            }
+          ]
         }
       },
       "layers": [
         {
           "id": "0",
-          "name": "Water Quality",
-          "layerType": "esriDynamic",
-          "url": "https://maps-cartes.ec.gc.ca/arcgis/rest/services/Shellfish_Sites_Samples_Mollusques_Echantillons/MapServer/",
+          "name": "Cube",
+          "layerType": "ogcWms",
+          "featureInfoMimeType": "text/plain",
+          "url": "https://datacube.services.geo.ca/ows/aerial",
           "layerEntries": [{
-            "index": 1,
-            "name": "Points"
-          }]
+                "id": "victoria",
+                "name": "victoria"
+            },{
+                "id": "halifax",
+                "name": "halifax"
+            },{
+                "id": "regina",
+                "name": "regina"
+            },{
+                "id": "salish",
+                "name": "salish"
+          }],
+          "suppressGetCapabilities": true
         }
       ],
       "extentSets": [
@@ -252,53 +280,27 @@
       ]
     },
     "plugins": {
-      "chart": {
-        "type": "line",
-        "title": "Shellfish Sites",
-        "axis": {
-          "xAxis": {
-            "type": "date",
-            "title": "Dates",
-            "values": "",
-            "split": ""
-          },
-          "yAxis": {
-            "type": "linear",
-            "title": "Concentration",
-            "values": "",
-            "split": ""
-          }
-        },
-        "options": {
-          "colors": "",
-          "cutOut": 0
+      "rangeSlider": {
+        "open": true,
+        "autorun": false,
+        "loop": false,
+        "controls": ["lock", "loop", "refresh", "reverse"],
+        "params": {
+          "delay": 3000,
+          "type": "wmst",
+          "rangeType": "single",
+          "stepType": "static",
+          "precision": "date",
+          "range": { "min": null, "max": null },
+          "limit": { "min": null, "max": null },
+          "limits": [],
+          "units": "",
+          "description": "This slider limit and range is set by the wms getCapabilities"
         },
         "layers": [{
-            "id": "0",
-            "nameField": "Site",
-            "type": "link",
-            "linkUrl": "https://maps-cartes.ec.gc.ca/arcgis/rest/services/Shellfish_Sites_Samples_Mollusques_Echantillons/MapServer/9",
-            "linkField": "Site",
-            "data": [{
-                "type": "combine",
-                "linkType": "single",
-                "link": "Site",
-                "measure": "FC_MPN_CF_NPP_100_mL",
-                "date": "Date",
-                "label": {
-                  "type": "config",
-                  "values": "FC MPN",
-                  "split": ""
-                },
-                "regex": "\\(|\\),\\(|\\)",
-                "split": ",",
-                "prefix": "Concentration",
-                "suffix": "by 100 / ml"
-            }],
-            "details": {
-              "enabled": false,
-              "value": ""
-            }
+          "id": "0",
+          "field": "TIME",
+          "isTimeAware": true
         }]
       }
     }

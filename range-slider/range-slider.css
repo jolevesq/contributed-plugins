@@ -291,38 +291,43 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   top: 50%;
   right: 120%; }
 
-.noUi-marker-horizontal.noUi-marker-large {
-  height: 10px; }
-
-.noUi-horizontal {
-  height: 10px; }
-
-.noUi-horizontal .noUi-handle {
-  height: 20px;
-  width: 26px; }
-
-.noUi-handle:before {
-  height: 10px;
-  top: 4px;
-  left: 10px; }
-
-.noUi-handle:after {
-  height: 10px;
-  top: 4px;
-  left: 12px; }
-
 .noUi-handle {
   background-color: #c0c0c0; }
   .noUi-handle:focus .noUi-tooltip {
     display: block; }
+  .noUi-handle:before {
+    height: 10px;
+    top: 4px;
+    left: 10px; }
+  .noUi-handle:after {
+    height: 10px;
+    top: 4px;
+    left: 12px; }
 
 .noUi-tooltip {
   padding: 1px 4px;
   display: none; }
 
-.noUi-horizontal .noUi-tooltip {
-  top: 20px;
-  bottom: initial; }
+.noUi-horizontal {
+  height: 10px; }
+  .noUi-horizontal .noUi-tooltip {
+    top: 20px;
+    bottom: initial; }
+  .noUi-horizontal .noUi-handle {
+    height: 20px;
+    width: 26px; }
+
+.noUi-pips-horizontal .noUi-value {
+  margin-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.noUi-pips-horizontal .noUi-marker-overlap {
+  height: 15px;
+  background-color: #ccc; }
+
+.noUi-pips-horizontal .noUi-value-overlap {
+  display: none; }
 
 input:focus + .noUi-tooltip {
   display: block; }
@@ -378,12 +383,18 @@ input:focus + .noUi-tooltip {
   margin-right: 30px; }
 
 #rangeSlider {
-  opacity: 0.7; }
+  opacity: 0.7;
+  height: 180px !important;
+  top: calc(100% - 240px) !important; }
   #rangeSlider .panel-body {
     height: auto; }
 
 #rangeSlider:hover, #rangeSlider:focus-within {
   opacity: 1; }
+
+#rangeSlider.collapsed {
+  height: 120px !important;
+  top: calc(100% - 180px) !important; }
 
 .rv-rangeslider {
   display: flex;
@@ -440,6 +451,14 @@ input:focus + .noUi-tooltip {
               margin-right: 5px; }
       .rv-rangeslider .slider-content .slider-bar .slider-widget {
         width: 93%; }
+      .rv-rangeslider .slider-content .slider-bar.no-units .slider-widget {
+        width: 100%; }
+      .rv-rangeslider .slider-content .slider-bar.no-units .slider-units {
+        width: 1px;
+        visibility: hidden; }
+      .rv-rangeslider .slider-content .slider-bar.hours-labels {
+        padding-left: 70px;
+        padding-right: 70px; }
       .rv-rangeslider .slider-content .slider-bar .slider-units {
         text-overflow: ellipsis;
         white-space: nowrap;

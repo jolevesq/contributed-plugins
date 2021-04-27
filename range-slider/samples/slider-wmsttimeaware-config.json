@@ -21,7 +21,7 @@
         "reorderable": false
       }
     },
-    "version": "3.2.0",
+    "version": "2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -85,16 +85,37 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": []
+          "children": [
+            {
+              "name": "A Group with a hidden layer",
+              "expanded": true,
+              "children": [
+                {
+                  "layerId": "0",
+                  "hidden": true
+                },
+                {
+                  "layerId": "powerplant100mw-naturalGas"
+                }
+              ]
+            },
+            {
+              "layerId": "GeoChron"
+            }
+          ]
         }
       },
       "layers": [
         {
           "id": "0",
-          "name": "Graphics",
-          "layerType": "esriFeature",
-          "fileType": "geojson",
-          "url": "https://raw.githubusercontent.com/fgpv-vpgf/contributed-plugins/master/chart/src/samples/geoJSON/doughnutChart.json"
+          "name": "Geomet",
+          "layerType": "ogcWms",
+          "url": "https://geo.weather.gc.ca/geomet",
+          "layerEntries": [{
+            "id": "RADAR_1KM_RSNO",
+            "name": "RADAR_1KM_RSNO"
+          }],
+          "suppressGetCapabilities": true
         }
       ],
       "extentSets": [
@@ -249,38 +270,27 @@
       ]
     },
     "plugins": {
-      "chart": {
-        "type": "pie",
-        "title": "My Custom Tilte",
-        "labelsPie": {
-          "type": "field",
-          "values": "label",
-          "split": ";"
-        },
-        "options": {
-          "colors": "",
-          "cutOut": 20
+      "rangeSlider": {
+        "open": true,
+        "autorun": false,
+        "loop": false,
+        "controls": ["lock", "loop", "refresh", "reverse"],
+        "params": {
+          "delay": 3000,
+          "type": "wmst",
+          "rangeType": "single",
+          "stepType": "static",
+          "precision": "hours",
+          "range": { "min": null, "max": null },
+          "limit": { "min": null, "max": null },
+          "limits": [],
+          "units": "",
+          "description": "This slider limit and range is set by the wms getCapabilities"
         },
         "layers": [{
-            "id": "0",
-            "nameField": "OBJECTID",
-            "data": [{
-              "type": "single",
-              "measure": "data",
-              "label": {
-                "type": "config",
-                "values": "",
-                "split": ";"
-              },
-              "regex": "\\[|\\];\\[|\\]",
-              "split": ";",
-              "prefix": "Custom",
-              "suffix": "Color"
-            }],
-            "details": {
-              "enabled": false,
-              "value": ""
-            }
+          "id": "0",
+          "field": "TIME",
+          "isTimeAware": true
         }]
       }
     }

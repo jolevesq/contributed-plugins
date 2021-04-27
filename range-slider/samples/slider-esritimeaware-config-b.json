@@ -21,7 +21,7 @@
         "reorderable": false
       }
     },
-    "version": "3.2.0",
+    "version": "2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -85,37 +85,41 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": []
+          "children": [
+            {
+              "name": "A Group with a hidden layer",
+              "expanded": true,
+              "children": [
+                {
+                  "layerId": "0",
+                  "hidden": true
+                },
+                {
+                  "layerId": "powerplant100mw-naturalGas"
+                }
+              ]
+            },
+            {
+              "layerId": "GeoChron"
+            }
+          ]
         }
       },
       "layers": [
         {
           "id": "0",
-          "name": "Graphics",
-          "layerType": "esriFeature",
-          "fileType": "geojson",
-          "url": "https://raw.githubusercontent.com/fgpv-vpgf/contributed-plugins/master/chart/src/samples/geoJSON/pieChart.json"
-        },
-        {
-          "id": "1",
-          "name": "Graphics Double",
-          "layerType": "esriFeature",
-          "fileType": "geojson",
-          "url": "https://raw.githubusercontent.com/fgpv-vpgf/contributed-plugins/master/chart/src/samples/geoJSON/pieChart.json"
-        },
-        {
-          "id": "2",
-          "name": "Graphics Second",
-          "layerType": "esriFeature",
-          "fileType": "geojson",
-          "url": "https://raw.githubusercontent.com/fgpv-vpgf/contributed-plugins/master/chart/src/samples/geoJSON/pieChart-second.json"
-        },
-        {
-          "id": "3",
-          "name": "Graphics Unused",
-          "layerType": "esriFeature",
-          "fileType": "geojson",
-          "url": "https://raw.githubusercontent.com/fgpv-vpgf/contributed-plugins/master/chart/src/samples/geoJSON/pieChart-unused.json"
+          "name": "MSDI surface layer",
+          "layerType": "esriDynamic",
+          "url": "https://gisp.dfo-mpo.gc.ca/arcgis/rest/services/FGP/MSDI_Dynamic_Current_Layer/MapServer/",
+          "layerEntries": [{
+            "index": 1,
+            "nameField": "",
+            "name": "Coast"
+          }, {
+            "index": 2,
+            "nameField": "",
+            "name": "Harbor"
+          }]
         }
       ],
       "extentSets": [
@@ -270,58 +274,27 @@
       ]
     },
     "plugins": {
-      "chart": {
-        "type": "pie",
-        "title": "My Custom Tilte",
-        "labelsPie": {
-          "type": "config",
-          "values": "lbl 1;lbl 2;lbl 3;lbl 4;lbl 5;lbl 6; lbl 7",
-          "split": ";"
-        },
-        "options": {
-          "colors": "#aaffc3;#808000;#ffd8b1;#000075;#e6194b;#3cb44b;#ffe119",
-          "cutOut": 0
+      "rangeSlider": {
+        "open": true,
+        "autorun": false,
+        "loop": false,
+        "controls": ["lock", "loop", "refresh", "reverse"],
+        "params": {
+          "delay": 3000,
+          "type": "date",
+          "rangeType": "dual",
+          "stepType": "dynamic",
+          "precision": "date",
+          "range": { "min": null, "max": null },
+          "limit": { "min": null, "max": null },
+          "limits": [],
+          "units": "",
+          "description": "This slider limit and range is set by the time info"
         },
         "layers": [{
-            "id": "0",
-            "nameField": "OBJECTID",
-            "data": [{
-              "type": "single",
-              "measure": "data",
-              "label": {
-                "type": "config",
-                "values": "",
-                "split": ";"
-              },
-              "regex": "",
-              "split": ";",
-              "prefix": "Custom",
-              "suffix": "Color"
-            }],
-            "details": {
-              "enabled": true,
-              "value": "## What a nice pie chart\n**Useful data listed below**\n * Label field value: {{label}}\n * Data: {{data}}\n\n\n![sd-logo](https://raw.githubusercontent.com/showdownjs/logo/master/dist/logo.readme.png 'sd logo')\n\n[Get Showdown!](https://github.com/showdownjs/showdown)"
-            }
-        }, {
-            "id": "2",
-            "nameField": "OBJECTID",
-            "data": [{
-              "type": "single",
-              "measure": "data",
-              "label": {
-                "type": "config",
-                "values": "",
-                "split": ";"
-              },
-              "regex": "",
-              "split": ";",
-              "prefix": "Custom Second",
-              "suffix": "Color Second"
-            }],
-            "details": {
-              "enabled": false,
-              "value": ""
-            }
+          "id": "0",
+          "field": "date_time",
+          "isTimeAware": true
         }]
       }
     }

@@ -13,46 +13,11 @@ export declare class SliderBar {
     private _precision;
     private _stepType;
     private _rangeType;
-    private _interval;
+    private _sliderBarCtrl;
     static _playState: BehaviorSubject<boolean>;
     static getPlayState(): Observable<boolean>;
     private static setPlayState;
     private _gifImages;
-    /**
-     * Slider bar constructor
-     * @constructor
-     * @param {Any} mapApi the viewer api
-     * @param {Any} config the slider configuration
-     */
-    constructor(mapApi: any, config: any, myBundle: any);
-    /**
-     * Start slider creation
-     * @function
-     * @param {String} type the type of slider (date, number or wmst)
-     * @param {String} language the viewerlanguage (en-CA or fr-CA)
-     */
-    startSlider(type: string, language: string): void;
-    /**
-     * Set ranges
-     * @function setNoUiBarRanges
-     * @param {Number} width display width
-     * @param {Range} limit min and max limit to set
-     * @param {String} rangeType range type (dual or single)
-     * @param {String} stepType step type (dynamic or static)
-     * @param {Number} step step value to use for (single and dynamic)
-     * @return {Range} range the updated limits
-     */
-    setNoUiBarRanges(width: number, limit: Range, rangeType: string, stepType: string, step: number): Range;
-    /**
-     * Set pips (slider labels) format
-     * @function formatPips
-     * @param {Any} value the value to display (number, string or date)
-     * @param {String} field the type of field
-     * @param {String} lang the language to use
-     * @return {any} value the formated value
-     */
-    formatPips(value: any, field: string, lang: string): any;
-    setTooltips(type: string, language: string): object[];
     /**
      * Set slider range
      * @property range
@@ -159,6 +124,53 @@ export declare class SliderBar {
      */
     get maximizeDesc(): boolean;
     /**
+     * Slider bar constructor
+     * @constructor
+     * @param {Any} mapApi the viewer api
+     * @param {Any} config the slider configuration
+     */
+    constructor(mapApi: any, config: any, myBundle: any);
+    /**
+     * Start slider creation
+     * @function
+     * @param {String} type the type of slider (date, number or wmst)
+     * @param {String} language the viewerlanguage (en-CA or fr-CA)
+     */
+    startSlider(type: string, language: string): void;
+    /**
+     * Remove pips overlap
+     * @function removePipsOverlaps
+     */
+    removePipsOverlaps(): void;
+    /**
+     * Set ranges
+     * @function setNoUiBarRanges
+     * @param {Number} width display width
+     * @param {Range} limit min and max limit to set
+     * @param {String} rangeType range type (dual or single)
+     * @param {String} stepType step type (dynamic or static)
+     * @param {Number} step step value to use for (single and dynamic)
+     * @return {Range} range the updated limits
+     */
+    setNoUiBarRanges(width: number, limit: Range, stepType: string): Range;
+    /**
+     * Set pips (slider labels) format
+     * @function formatPips
+     * @param {Any} value the value to display (number, string or date)
+     * @param {String} field the type of field
+     * @param {String} lang the language to use
+     * @return {any} value the formated value
+     */
+    formatPips(value: any, field: string, lang: string): any;
+    /**
+     * Set tooltips
+     * @function setTooltips
+     * @param {String} type of tooltip (number or date)
+     * @param {String} language of tooltip (en-CA or fr-CA)
+     * @returns the tooltips
+     */
+    setTooltips(type: string, language: string): object[];
+    /**
      * Set play or pause on the slider
      * @function play
      * @param {Boolean} play true if slider is playing, false otherwise
@@ -182,6 +194,10 @@ export declare class SliderBar {
      * @param {Boolean} stop true if it is the last snapshot and it needs to export the gif, false otherwise
      */
     takeSnapShot(stop: boolean): void;
+    /**
+     * Export the animation to GIF
+     * @function exportToGIF
+     */
     exportToGIF(): void;
     /**
      * Set play on the slider
