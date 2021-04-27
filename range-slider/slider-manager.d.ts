@@ -87,6 +87,7 @@ export declare class SliderManager {
     processWMSExtent(extent: any): object;
     /**
      * Check if it is a discrete or range extent
+     * @function isDiscreteExtent
      * @param {string} strExtent the time extent string
      * @returns a boolean, true if discrete, false otherwise
      */
