@@ -149,15 +149,45 @@
           "url": "https://maps-cartes.services.geo.ca/egs_sgu/services/Flood_Inondation/EGS_Flood_Product_Current_en/MapServer/WMSServer",
           "layerEntries": [{
             "id": "0",
-            "name": "Product Footprints"
+            "name": "Product Footprints",
+            "controls": [],
+            "disabledControls": [],
+            "state": {
+              "opacity": 1,
+              "visibility": true,
+              "boundingBox": false,
+              "query": true,
+              "snapshot": false,
+              "hovertips": false
+            }
           },
           {
             "id": "1",
-            "name": "In Canada"
+            "name": "In Canada",
+            "controls": [],
+            "disabledControls": [],
+            "state": {
+              "opacity": 1,
+              "visibility": true,
+              "boundingBox": false,
+              "query": true,
+              "snapshot": false,
+              "hovertips": false
+            }
           },
           {
             "id": "2",
-            "name": "Flooded Area in Canada"
+            "name": "Flooded Area in Canada",
+            "controls": [],
+            "disabledControls": [],
+            "state": {
+              "opacity": 1,
+              "visibility": true,
+              "boundingBox": false,
+              "query": true,
+              "snapshot": false,
+              "hovertips": false
+            }
           }]
         }
       ],
