@@ -21,7 +21,7 @@
         "reorderable": false
       }
     },
-    "version": "2.0",
+    "version": "3.2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -85,74 +85,19 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": [
-            {
-              "name": "A Group with a hidden layer",
-              "expanded": true,
-              "children": [
-                {
-                  "layerId": "0",
-                  "hidden": true
-                },
-                {
-                  "layerId": "powerplant100mw-naturalGas"
-                }
-              ]
-            },
-            {
-              "layerId": "GeoChron"
-            }
-          ]
+          "children": []
         }
       },
       "layers": [
         {
           "id": "0",
-          "name": "Victoria",
-          "layerType": "ogcWms",
-          "featureInfoMimeType": "text/plain",
-          "url": "https://datacube.services.geo.ca/ows/aerial",
+          "name": "Water Quality",
+          "layerType": "esriDynamic",
+          "url": "https://maps-stage.services.geo.ca/server_serveur/rest/services/NRCAN/Water_Quality_Test2/MapServer",
           "layerEntries": [{
-                "id": "victoria",
-                "name": "victoria"
-            }],
-          "suppressGetCapabilities": true
-        },
-        {
-          "id": "1",
-          "name": "Halifax",
-          "layerType": "ogcWms",
-          "featureInfoMimeType": "text/plain",
-          "url": "https://datacube.services.geo.ca/ows/aerial",
-          "layerEntries": [{
-                "id": "halifax",
-                "name": "halifax"
-            }],
-          "suppressGetCapabilities": true
-        },
-        {
-          "id": "2",
-          "name": "Regina",
-          "layerType": "ogcWms",
-          "featureInfoMimeType": "text/plain",
-          "url": "https://datacube.services.geo.ca/ows/aerial",
-          "layerEntries": [{
-                "id": "regina",
-                "name": "regina"
-            }],
-          "suppressGetCapabilities": true
-        },
-        {
-          "id": "3",
-          "name": "Salish",
-          "layerType": "ogcWms",
-          "featureInfoMimeType": "text/plain",
-          "url": "https://datacube.services.geo.ca/ows/aerial",
-          "layerEntries": [{
-                "id": "salish",
-                "name": "salish"
-            }],
-          "suppressGetCapabilities": true
+            "index": 0,
+            "name": "Points"
+          }]
         }
       ],
       "extentSets": [
@@ -307,39 +252,54 @@
       ]
     },
     "plugins": {
-      "rangeSlider": {
-        "open": true,
-        "autorun": false,
-        "loop": false,
-        "controls": ["lock", "loop", "refresh", "reverse"],
-        "params": {
-          "delay": 3000,
-          "type": "wmst",
-          "rangeType": "single",
-          "stepType": "static",
-          "precision": "date",
-          "range": { "min": null, "max": null },
-          "limit": { "min": null, "max": null },
-          "limits": [],
-          "units": "",
-          "description": "This slider limit and range is set by the wms getCapabilities."
+      "chart": {
+        "type": "line",
+        "title": "Water Quality",
+        "axis": {
+          "xAxis": {
+            "type": "date",
+            "title": "Dates",
+            "values": "",
+            "split": ""
+          },
+          "yAxis": {
+            "type": "linear",
+            "title": "MG / L",
+            "values": "",
+            "split": ""
+          }
+        },
+        "options": {
+          "colors": "",
+          "cutOut": 0
         },
         "layers": [{
-          "id": "0",
-          "field": "TIME",
-          "isTimeAware": true
-        }, {
-          "id": "1",
-          "field": "TIME",
-          "isTimeAware": true
-        }, {
-          "id": "2",
-          "field": "TIME",
-          "isTimeAware": true
-        }, {
-          "id": "3",
-          "field": "TIME",
-          "isTimeAware": true
+            "id": "0",
+            "nameField": "Site_number",
+            "type": "link",
+            "linkUrl": "https://maps-stage.services.geo.ca/server_serveur/rest/services/NRCAN/Water_Quality_Test2/MapServer/1",
+            "linkField": "Site_number",
+            "data": [{
+                "type": "combine",
+                "linkType": "multi",
+                "link": "Site_number",
+                "measure": "VALUE_VALEUR",
+                "values": "VARIABLE_NAME",
+                "date": "DATE",
+                "label": {
+                  "type": "config",
+                  "values": "",
+                  "split": ""
+                },
+                "regex": "\\(|\\),\\(|\\)",
+                "split": ",",
+                "prefix": "",
+                "suffix": "MG/L"
+            }],
+            "details": {
+              "enabled": false,
+              "value": ""
+            }
         }]
       }
     }

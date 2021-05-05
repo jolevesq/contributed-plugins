@@ -21,7 +21,7 @@
         "reorderable": false
       }
     },
-    "version": "2.0",
+    "version": "3.2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -85,41 +85,16 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": [
-            {
-              "name": "A Group with a hidden layer",
-              "expanded": true,
-              "children": [
-                {
-                  "layerId": "0",
-                  "hidden": true
-                },
-                {
-                  "layerId": "powerplant100mw-naturalGas"
-                }
-              ]
-            },
-            {
-              "layerId": "GeoChron"
-            }
-          ]
+          "children": []
         }
       },
       "layers": [
         {
           "id": "0",
-          "name": "MSDI surface layer",
-          "layerType": "esriDynamic",
-          "url": "https://gisp.dfo-mpo.gc.ca/arcgis/rest/services/FGP/MSDI_Dynamic_Current_Layer/MapServer/",
-          "layerEntries": [{
-            "index": 1,
-            "nameField": "",
-            "name": "Coast"
-          }, {
-            "index": 2,
-            "nameField": "",
-            "name": "Harbor"
-          }]
+          "name": "Graphics",
+          "layerType": "esriFeature",
+          "fileType": "geojson",
+          "url": "https://raw.githubusercontent.com/fgpv-vpgf/contributed-plugins/master/chart/src/samples/geoJSON/doughnutChart.json"
         }
       ],
       "extentSets": [
@@ -274,27 +249,38 @@
       ]
     },
     "plugins": {
-      "rangeSlider": {
-        "open": true,
-        "autorun": false,
-        "loop": false,
-        "controls": ["lock", "loop", "refresh", "reverse"],
-        "params": {
-          "delay": 3000,
-          "type": "date",
-          "rangeType": "dual",
-          "stepType": "dynamic",
-          "precision": "date",
-          "range": { "min": null, "max": null },
-          "limit": { "min": null, "max": null },
-          "limits": [],
-          "units": "",
-          "description": "This slider limit and range is set by the time info"
+      "chart": {
+        "type": "pie",
+        "title": "My Custom Tilte",
+        "labelsPie": {
+          "type": "field",
+          "values": "label",
+          "split": ";"
+        },
+        "options": {
+          "colors": "",
+          "cutOut": 20
         },
         "layers": [{
-          "id": "0",
-          "field": "date_time",
-          "isTimeAware": true
+            "id": "0",
+            "nameField": "OBJECTID",
+            "data": [{
+              "type": "single",
+              "measure": "data",
+              "label": {
+                "type": "config",
+                "values": "",
+                "split": ";"
+              },
+              "regex": "\\[|\\];\\[|\\]",
+              "split": ";",
+              "prefix": "Custom",
+              "suffix": "Color"
+            }],
+            "details": {
+              "enabled": false,
+              "value": ""
+            }
         }]
       }
     }

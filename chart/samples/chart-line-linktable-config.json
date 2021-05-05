@@ -21,7 +21,7 @@
         "reorderable": false
       }
     },
-    "version": "2.0",
+    "version": "3.2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -85,32 +85,19 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": [
-            {
-              "name": "A Group with a hidden layer",
-              "expanded": true,
-              "children": [
-                {
-                  "layerId": "0",
-                  "hidden": true
-                },
-                {
-                  "layerId": "powerplant100mw-naturalGas"
-                }
-              ]
-            },
-            {
-              "layerId": "GeoChron"
-            }
-          ]
+          "children": []
         }
       },
       "layers": [
         {
-          "id": "1",
-          "name": "Natural Gas",
-          "layerType": "esriFeature",
-          "url": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer/21"
+          "id": "0",
+          "name": "Water Quality",
+          "layerType": "esriDynamic",
+          "url": "https://maps-cartes.ec.gc.ca/arcgis/rest/services/Shellfish_Sites_Samples_Mollusques_Echantillons/MapServer/",
+          "layerEntries": [{
+            "index": 1,
+            "name": "Points"
+          }]
         }
       ],
       "extentSets": [
@@ -265,24 +252,53 @@
       ]
     },
     "plugins": {
-      "rangeSlider": {
-        "open": true,
-        "autorun": false,
-        "loop": false,
-        "controls": ["lock", "reverse", "refresh", "loop"],
-        "params": {
-          "delay": 3000,
-          "type": "number",
-          "rangeType": "single",
-          "stepType": "static",
-          "range": { "min": 441, "max": null },
-          "limit": { "min": 200, "max": 2095, "staticItems": [441, 610, 933, 1352, 1674, 1905, 1962] },
-          "units": "",
-          "description": ""
+      "chart": {
+        "type": "line",
+        "title": "Shellfish Sites",
+        "axis": {
+          "xAxis": {
+            "type": "date",
+            "title": "Dates",
+            "values": "",
+            "split": ""
+          },
+          "yAxis": {
+            "type": "linear",
+            "title": "Concentration",
+            "values": "",
+            "split": ""
+          }
+        },
+        "options": {
+          "colors": "",
+          "cutOut": 0
         },
         "layers": [{
-          "id": "1",
-          "field": "OBJECTID"
+            "id": "0",
+            "nameField": "Site",
+            "type": "link",
+            "linkUrl": "https://maps-cartes.ec.gc.ca/arcgis/rest/services/Shellfish_Sites_Samples_Mollusques_Echantillons/MapServer/9",
+            "linkField": "Site",
+            "data": [{
+                "type": "combine",
+                "linkType": "single",
+                "link": "Site",
+                "measure": "FC_MPN_CF_NPP_100_mL",
+                "date": "Date",
+                "label": {
+                  "type": "config",
+                  "values": "FC MPN",
+                  "split": ""
+                },
+                "regex": "\\(|\\),\\(|\\)",
+                "split": ",",
+                "prefix": "Concentration",
+                "suffix": "by 100 / ml"
+            }],
+            "details": {
+              "enabled": false,
+              "value": ""
+            }
         }]
       }
     }

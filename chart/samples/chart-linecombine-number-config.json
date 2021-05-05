@@ -21,7 +21,7 @@
         "reorderable": false
       }
     },
-    "version": "2.0",
+    "version": "3.2.0",
     "language": "en",
     "services":{
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
@@ -85,37 +85,16 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": [
-            {
-              "name": "A Group with a hidden layer",
-              "expanded": true,
-              "children": [
-                {
-                  "layerId": "0",
-                  "hidden": true
-                },
-                {
-                  "layerId": "powerplant100mw-naturalGas"
-                }
-              ]
-            },
-            {
-              "layerId": "GeoChron"
-            }
-          ]
+          "children": []
         }
       },
       "layers": [
         {
           "id": "0",
-          "name": "Geomet",
-          "layerType": "ogcWms",
-          "url": "https://geo.weather.gc.ca/geomet",
-          "layerEntries": [{
-            "id": "RADAR_1KM_RSNO",
-            "name": "RADAR_1KM_RSNO"
-          }],
-          "suppressGetCapabilities": true
+          "name": "Graphics",
+          "layerType": "esriFeature",
+          "fileType": "geojson",
+          "url": "https://raw.githubusercontent.com/fgpv-vpgf/contributed-plugins/master/chart/src/samples/geoJSON/lineChartMultiNumber.json"
         }
       ],
       "extentSets": [
@@ -270,27 +249,47 @@
       ]
     },
     "plugins": {
-      "rangeSlider": {
-        "open": true,
-        "autorun": false,
-        "loop": false,
-        "controls": ["lock", "loop", "refresh", "reverse"],
-        "params": {
-          "delay": 3000,
-          "type": "wmst",
-          "rangeType": "single",
-          "stepType": "static",
-          "precision": "hours",
-          "range": { "min": null, "max": null },
-          "limit": { "min": null, "max": null },
-          "limits": [],
-          "units": "",
-          "description": "This slider limit and range is set by the wms getCapabilities"
+      "chart": {
+        "type": "line",
+        "title": "my chart",
+        "axis": {
+          "xAxis": {
+            "type": "linear",
+            "title": "My numbers",
+            "values": "",
+            "split": ""
+          },
+          "yAxis": {
+            "type": "linear",
+            "title": "My values",
+            "values": "",
+            "split": ""
+          }
+        },
+        "options": {
+          "colors": "",
+          "cutOut": 0
         },
         "layers": [{
-          "id": "0",
-          "field": "TIME",
-          "isTimeAware": true
+            "id": "0",
+            "nameField": "OBJECTID",
+            "data": [{
+              "type": "combine",
+              "measure": "data1",
+              "label": {
+                "type": "value",
+                "values": "data1",
+                "split": ""
+              },
+              "regex": "\\(|\\),\\(|\\)",
+              "split": ",",
+              "prefix": "",
+              "suffix": "mBq / m3"
+            }],
+            "details": {
+              "enabled": false,
+              "value": ""
+            }
         }]
       }
     }

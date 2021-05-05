@@ -21,10 +21,9 @@
         "reorderable": false
       }
     },
-    "version": "2.0",
+    "version": "3.2.0",
     "language": "en",
     "services":{
-      "corsEverywhere": true,
       "proxyUrl":"https://maps.canada.ca/wmsproxy/ws/wmsproxy/executeFromProxy",
       "geometryUrl":"https://webservices.maps.canada.ca/arcgis/rest/services/Utilities/Geometry/GeometryServer",
       "exportMapUrl":"https://webservices.maps.canada.ca/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task",
@@ -86,52 +85,15 @@
         "type": "autopopulate",
         "root": {
           "name": "root",
-          "children": [
-          ]
+          "children": []
         }
       },
       "layers": [
         {
-          "id": "wms",
-          "layerType": "ogcWms",
-          "url": "http://webservices.maps.canada.ca/arcgis/services/NRCan/earthquakes_en/MapServer/WmsServer",
-          "name": "Real WMS",
-          "controls": ["data", "visibility", "opacity", "reload"],
-          "layerEntries": [
-            {
-                "id": "3",
-                "name": "Sample",
-                "currentStyle": "default"
-            }]
-        },
-        {
-        "layerChoice": "ogcWms",
-        "layerType": "ogcWms",
-        "suppressGetCapabilities": true,
-        "layerEntries": [
-            {
-                "init": true,
-                "id": "CABIN",
-                "name": "CABIN"
-            }
-        ],
-        "name": "CABIN",
-        "id": "wms2",
-        "url": "https://cabin-rcba.ec.gc.ca/cabin_ows.asp"
-    },
-        {
-          "id": "wfs",
-          "layerType": "ogcWfs",
-          "url": "http://geo.weather.gc.ca/geomet-beta/features/collections/ahccd-trends/items?measurement_type__type_mesure=temp_max&period__periode=Jan&startindex=0&limit=1000",
-          "name": "Homogenized mean temperature",
-          "nameField": "station_name",
-          "state": {
-            "opacity": 1,
-            "visibility": true
-          },
-          "xyInAttribs": true,
-          "colour": "#f04116",
-          "controls": ["data", "visibility", "opacity"]
+          "id": "0",
+          "name": "Graphics",
+          "layerType": "esriFeature",
+          "url": "https://webservices.maps.canada.ca/arcgis/rest/services/Test_FGP/test_data/MapServer/0"
         }
       ],
       "extentSets": [
@@ -286,22 +248,59 @@
       ]
     },
     "plugins": {
-      "rangeSlider": {
-        "open": true,
-        "autorun": false,
-        "loop": false,
-        "controls": ["lock", "loop", "delay", "refresh", "export"],
-        "params": {
-          "delay": 3000,
-          "range": { "min": 2013, "max": 2014 },
-          "limit": { "min": 2000, "max": 2018 },
-          "type": "number",
-          "units": "",
-          "description": ""
+      "chart": {
+        "type": "line",
+        "title": "my chart",
+        "axis": {
+          "xAxis": {
+            "type": "date",
+            "title": "Dates",
+            "values": "",
+            "split": ""
+          },
+          "yAxis": {
+            "type": "linear",
+            "title": "My values",
+            "values": "",
+            "split": ""
+          }
+        },
+        "options": {
+          "colors": "",
+          "cutOut": 0
         },
         "layers": [{
-            "id": "wms2",
-            "field": "year"
+            "id": "0",
+            "nameField": "Location_Emplacement",
+            "data": [{
+              "type": "combine",
+              "measure": "measure2_data",
+              "label": {
+                "type": "field",
+                "values": "measure2_name",
+                "split": ""
+              },
+              "regex": "\\(|\\),\\(|\\)",
+              "split": ",",
+              "prefix": "",
+              "suffix": "mBq / m3"
+            }, {
+              "type": "combine",
+              "measure": "measure3_data",
+              "label": {
+                "type": "field",
+                "values": "measure3_name",
+                "split": ""
+              },
+              "regex": "\\(|\\),\\(|\\)",
+              "split": ",",
+              "prefix": "",
+              "suffix": "mBq / m3"
+            }],
+            "details": {
+              "enabled": false,
+              "value": ""
+            }
         }]
       }
     }
