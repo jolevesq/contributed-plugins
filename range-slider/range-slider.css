@@ -332,6 +332,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .noUi-pips {
   color: #676767; }
   .noUi-pips .noUi-marker-large {
+    height: 10px;
     background-color: #8d8d8d; }
   .noUi-pips .noUi-marker-normal {
     background-color: #AAA; }
