@@ -344,7 +344,7 @@ input:focus + .noUi-tooltip {
   #rangeSlider {
     margin-left: auto !important;
     margin-right: 60px !important;
-    width: fit-content !important;
+    width: max-content !important;
     top: calc(100% - 110px) !important;
     height: 40px !important;
     opacity: 1 !important; }
@@ -368,7 +368,7 @@ input:focus + .noUi-tooltip {
 .slider-min-ui #rangeSlider {
   margin-left: auto !important;
   margin-right: 60px !important;
-  width: fit-content !important;
+  width: max-content !important;
   top: calc(100% - 110px) !important;
   height: 40px !important;
   opacity: 1 !important; }
@@ -401,21 +401,21 @@ input:focus + .noUi-tooltip {
   opacity: 1; }
 
 #rangeSlider.collapsed {
-  height: 120px !important;
-  top: calc(100% - 180px) !important; }
+  height: 105px !important;
+  top: calc(100% - 165px) !important; }
 
 .rv-rangeslider {
   display: flex;
   flex-direction: row;
-  padding: 5px 10px; }
+  padding: 5px 10px 0px; }
   .rv-rangeslider .slider-content {
     overflow: hidden;
     width: 100%;
     flex-direction: row; }
     .rv-rangeslider .slider-content .slider-minmax-control {
-      right: 0px;
+      right: 2px;
       position: absolute;
-      top: 0px;
+      top: 1px;
       transform: translate(11px, -5px) rotate(225deg); }
       .rv-rangeslider .slider-content .slider-minmax-control .slider-max-control-icon {
         transform: rotate(180deg); }
@@ -429,7 +429,7 @@ input:focus + .noUi-tooltip {
       display: flex;
       flex-direction: column;
       width: 100%;
-      padding: 5px 40px; }
+      padding: 5px 40px 0px; }
       .rv-rangeslider .slider-content .slider-bar .slider-bar-noui {
         width: 100%;
         height: 50px; }
@@ -482,6 +482,7 @@ input:focus + .noUi-tooltip {
   .rv-rangeslider .slider-desc {
     color: #676767;
     overflow: auto;
+    margin-top: 10px;
     height: 60px; }
     .rv-rangeslider .slider-desc span {
       display: block; }

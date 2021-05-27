@@ -24,10 +24,15 @@ export declare class SliderBar {
      */
     set range(value: Range);
     /**
-     * Get slider range
+     * Get default slider range
      * @property range
      */
     get range(): Range;
+    /**
+     * Get active slider range
+     * @property range
+     */
+    get activeRange(): Range;
     /**
      * Set slider limit (dynamic)
      * @property limit
@@ -246,6 +251,10 @@ export declare class SliderBar {
      * @param {Range} range range to use to filter
      */
     setDefinitionQuery(range: Range): void;
+    /**
+     * Reset the definition query when the slider is close
+     */
+    resetDefinitionQuery(): void;
     /**
      * Set definition query to filter the data
      * @function getDate
