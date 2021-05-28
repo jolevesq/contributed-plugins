@@ -17,6 +17,9 @@ export declare class SliderBar {
     static _playState: BehaviorSubject<boolean>;
     static getPlayState(): Observable<boolean>;
     private static setPlayState;
+    static _reverseState: BehaviorSubject<boolean>;
+    static getReverseState(): Observable<boolean>;
+    static setReverseState(newValue: boolean): void;
     private _gifImages;
     /**
      * Set slider range
@@ -65,7 +68,7 @@ export declare class SliderBar {
     get lock(): boolean;
     /**
      * Get slider range type is dual
-     * @property lock
+     * @property dual
      */
     get dual(): boolean;
     /**

@@ -315,7 +315,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     bottom: initial; }
   .noUi-horizontal .noUi-handle {
     height: 20px;
-    width: 26px; }
+    width: 26px;
+    right: -14px !important; }
 
 .noUi-pips-horizontal .noUi-value {
   margin-top: 5px;
