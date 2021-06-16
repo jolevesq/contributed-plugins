@@ -37,6 +37,7 @@ export declare class ChartParser {
      * @param {Any} config the plugin config
      * @param {Any} feature the clicked feature
      * @param {Any} data the related data from the link table
+     * @param {Number} index index of data object
      * @param {String} attrValue optional attribute value to parse info inside linked data array
      * @preturn {Any} feature the updated feature
      */
