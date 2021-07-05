@@ -31,24 +31,28 @@ export declare class ChartLoader {
      * @param {Number} max maximum value for slider
      * @param {String} xType the x axis type, date or linear
      * @param {String} language the viewer language
+     * @param {Number} length the length of linear value
      */
-    initSlider(slider: any, min: number, max: number, type: string, language: string): void;
+    initSlider(slider: any, min: number, max: number, type: string, language: string, length: number): void;
     /**
      * Set pips (slider labels) format
      * @function formatPips
      * @param {Any} value the value to display (number, string or date)
+     * @param {String} type the pips type (date or linear)
      * @param {String} lang the language to use
+     * @param {Number} length the length of linear pips
      * @return {any} value the formated value
      */
-    formatPips(value: any, type: any, lang: string): any;
+    formatPips(value: any, type: string, lang: string, length: number): any;
     /**
      * Format tooltips
      * @function setTooltips
      * @param {string} type type of tooltips (will be pass to format pips function)
      * @param {string} language the viewer language
+     * @param {Number} length the length of tooltips
      * @return {Object[]} tooltips as an array of tooltip object
      */
-    setTooltips(type: string, language: string): object[];
+    setTooltips(type: string, language: string, length: number): object[];
     /**
      * Parse the graph pips labels value and set slider range
      * @function parsePips
